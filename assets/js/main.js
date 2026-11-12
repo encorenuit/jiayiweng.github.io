@@ -37,8 +37,28 @@ const copy = {
     nowWorkBody: "Operations, financial management, supply chain management, and customer development in Shenzhen.",
     footerTitle: "Contact",
     darkMode: "Dark mode",
-    sakura: "Scatter cherry blossom petals",
-    galleryHelp: "Swipe or drag to browse. Hold a photo to enlarge it.",
+    seasonLabel: "Season",
+    seasonAuto: "By month",
+    seasonSpring: "Spring · Cherry blossom",
+    seasonSummer: "Summer · Green leaves",
+    seasonAutumn: "Autumn · Maple",
+    seasonWinter: "Winter · Snow",
+    seasonReplay: "Replay animation",
+    phasurgeName: "Phasurge Tech Co., Ltd.",
+    huataiName: "Huatai Securities",
+    companyTitle: "About Phasurge",
+    companyIntro: "Phasurge develops two-phase direct cooling systems and control software for AI data centers, energy storage, and electric vehicle testing.",
+    companyWebsite: "Company website",
+    jcrNote: "Journal quartiles use the 2025 JIF data released in 2026. Open a badge for its source.",
+    dc60Category: "AI data centers",
+    dc60Title: "DC60",
+    dc60Body: "Rack-mounted two-phase direct cooling for AI servers.",
+    es05Category: "Energy storage",
+    es05Title: "ES05",
+    es05Body: "Direct cooling and heating for commercial and utility-scale battery systems.",
+    tb10Category: "EV testing",
+    tb10Title: "TB10",
+    tb10Body: "Direct cooling and heating test equipment with independent temperature, pressure, and flow control.",
     galleryPrevious: "Previous photo",
     galleryNext: "Next photo",
     researchEyebrow: "Research archive",
@@ -150,8 +170,28 @@ const copy = {
     nowWorkBody: "在深圳负责业务运营、财务管理、供应链管理和客户开发。",
     footerTitle: "联系方式",
     darkMode: "深色模式",
-    sakura: "撒一阵樱花",
-    galleryHelp: "左右滑动浏览，按住照片放大，松开恢复。",
+    seasonLabel: "季节",
+    seasonAuto: "按月份",
+    seasonSpring: "春 · 樱",
+    seasonSummer: "夏 · 绿",
+    seasonAutumn: "秋 · 枫",
+    seasonWinter: "冬 · 雪",
+    seasonReplay: "重播动效",
+    phasurgeName: "深圳市跃相智冷科技有限公司",
+    huataiName: "华泰证券",
+    companyTitle: "关于跃相智冷",
+    companyIntro: "跃相智冷研发两相直冷系统及控制软件，服务于 AI 数据中心、储能和新能源汽车测试。",
+    companyWebsite: "公司官网",
+    jcrNote: "期刊分区采用 2026 年发布的 2025 年 JIF 数据。点击徽标查看来源。",
+    dc60Category: "AI 数据中心",
+    dc60Title: "相芯 DC60",
+    dc60Body: "面向 AI 服务器的机架式两相直冷设备。",
+    es05Category: "储能",
+    es05Title: "相衡 ES05",
+    es05Body: "面向工商业和大型电池储能系统的直冷、直热设备。",
+    tb10Category: "新能源汽车测试",
+    tb10Title: "相鉴 TB10",
+    tb10Body: "支持温度、压力和流量独立调节的直冷、直热测试设备。",
     galleryPrevious: "上一张照片",
     galleryNext: "下一张照片",
     researchEyebrow: "研究档案",
@@ -229,10 +269,16 @@ const copy = {
 
 const languageNames = { en: "English", zh: "中文" };
 const languagePreference = "jiayi-preferred-language";
+const localizedLinks = new Map(
+  [...document.querySelectorAll("[data-href-zh]")].map((link) => [link, link.getAttribute("href")]),
+);
 
 function applyLanguage(language) {
   const lang = Object.hasOwn(copy, language) ? language : "en";
   document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
+  for (const [link, englishHref] of localizedLinks) {
+    link.href = lang === "zh" ? link.dataset.hrefZh : englishHref;
+  }
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
     if (copy[lang][key]) element.textContent = copy[lang][key];
@@ -248,7 +294,6 @@ function applyLanguage(language) {
   if (menuToggle) menuToggle.setAttribute("aria-label", copy[lang].menu);
   for (const [selector, key] of [
     ["[data-theme-toggle]", "darkMode"],
-    ["[data-sakura]", "sakura"],
     ["[data-gallery-previous]", "galleryPrevious"],
     ["[data-gallery-next]", "galleryNext"],
   ]) {
@@ -258,6 +303,7 @@ function applyLanguage(language) {
       control.title = copy[lang][key];
     }
   }
+  syncSeasonLabel();
 }
 
 function initLanguage() {
@@ -416,11 +462,11 @@ function initGallery() {
   updateArrows();
 }
 
-function scatterPetals(origin, count) {
+function scatterSeason(origin, count) {
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  document.querySelector(".sakura-drift")?.remove();
+  document.querySelector(".season-drift")?.remove();
   const layer = document.createElement("div");
-  layer.className = "sakura-drift";
+  layer.className = "season-drift";
   layer.setAttribute("aria-hidden", "true");
 
   for (let index = 0; index < count; index++) {
@@ -428,7 +474,7 @@ function scatterPetals(origin, count) {
     const left = origin
       ? Math.max(12, Math.min(innerWidth - 12, origin.x + (Math.random() - 0.5) * innerWidth * 0.65))
       : innerWidth * (index % 2 ? 0.04 + Math.random() * 0.23 : 0.71 + Math.random() * 0.24);
-    petal.className = "sakura-petal";
+    petal.className = "season-particle";
     petal.style.setProperty("--petal-left", `${left}px`);
     petal.style.setProperty("--petal-top", `${origin?.y ?? 70}px`);
     petal.style.setProperty("--petal-size", `${10 + Math.random() * 13}px`);
@@ -445,15 +491,14 @@ function scatterPetals(origin, count) {
 
 function scatterFrom(button, count = 14) {
   const rect = button.getBoundingClientRect();
-  scatterPetals({ x: rect.left + rect.width / 2, y: rect.bottom }, count);
+  scatterSeason({ x: rect.left + rect.width / 2, y: rect.bottom }, count);
 }
 
 function initTheme() {
   const root = document.documentElement;
   const toggle = document.querySelector("[data-theme-toggle]");
   if (!toggle) return;
-  const scheme = matchMedia("(prefers-color-scheme: dark)");
-  const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : scheme.matches;
+  const isDark = () => root.dataset.theme !== "light";
   const sync = () => {
     toggle.setAttribute("aria-pressed", String(isDark()));
     document.querySelector('meta[name="theme-color"]').content = getComputedStyle(document.body).backgroundColor;
@@ -465,12 +510,67 @@ function initTheme() {
     sync();
     scatterFrom(toggle, 9);
   });
-  scheme.addEventListener("change", sync);
   sync();
+}
 
-  const sakura = document.querySelector("[data-sakura]");
-  sakura.addEventListener("click", () => scatterFrom(sakura));
-  scatterPetals(null, 12);
+const seasonKeys = { spring: "seasonSpring", summer: "seasonSummer", autumn: "seasonAutumn", winter: "seasonWinter" };
+
+function syncSeasonLabel() {
+  const trigger = document.querySelector("[data-season-trigger]");
+  if (!trigger) return;
+  const root = document.documentElement;
+  const language = root.lang === "zh-CN" ? "zh" : "en";
+  const words = copy[language];
+  const label = words[seasonKeys[root.dataset.season]];
+  trigger.title = trigger.ariaLabel = `${words.seasonLabel} · ${label}`;
+}
+
+function initSeason() {
+  const picker = document.querySelector("[data-season-picker]");
+  if (!picker) return;
+  const trigger = picker.querySelector("summary");
+  const choices = [...picker.querySelectorAll("[data-season-choice]")];
+  const replay = picker.querySelector("[data-season-replay]");
+  let selection = "auto";
+  try {
+    const saved = localStorage.getItem("jiayi-season");
+    if (Object.hasOwn(seasonKeys, saved)) selection = saved;
+  } catch {}
+
+  const apply = () => {
+    document.documentElement.dataset.season = selection === "auto" ? calendarSeason() : selection;
+    for (const button of choices) {
+      button.setAttribute("aria-pressed", String(button.dataset.seasonChoice === selection));
+    }
+    syncSeasonLabel();
+  };
+  const close = () => {
+    picker.open = false;
+    trigger.focus({ preventScroll: true });
+  };
+
+  for (const button of choices) {
+    button.addEventListener("click", () => {
+      selection = button.dataset.seasonChoice;
+      try { localStorage.setItem("jiayi-season", selection); } catch {}
+      apply();
+      close();
+      scatterFrom(trigger);
+    });
+  }
+  replay.addEventListener("click", () => {
+    close();
+    scatterFrom(trigger);
+  });
+  replay.hidden = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.addEventListener("pointerdown", (event) => {
+    if (!picker.contains(event.target)) picker.open = false;
+  });
+  picker.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && picker.open) close();
+  });
+  apply();
+  scatterSeason(null, 12);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -478,6 +578,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMenu();
   initReveal();
   initTheme();
+  initSeason();
   initGallery();
   const year = document.querySelector("[data-year]");
   if (year) year.textContent = new Date().getFullYear();

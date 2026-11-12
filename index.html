@@ -1,623 +1,202 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jiayi Weng | 翁家毅</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root {
-  --accent: #2563eb;
-  --accent-light: #eff6ff;
-  --text: #0f172a;
-  --text-secondary: #475569;
-  --muted: #94a3b8;
-  --border: #e2e8f0;
-  --bg: #ffffff;
-  --bg-soft: #f8fafc;
-  --max: 740px;
-  --radius: 8px;
-}
-* { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: var(--text);
-  background: var(--bg);
-  font-size: 15px;
-  line-height: 1.75;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ── NAV ── */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(12px) saturate(180%);
-  border-bottom: 1px solid var(--border);
-}
-.nav-inner {
-  max-width: var(--max); margin: 0 auto;
-  padding: 0 24px; height: 50px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { font-weight: 700; font-size: 15px; color: var(--text); letter-spacing: -0.3px; }
-.nav-links { display: flex; align-items: center; gap: 24px; }
-.nav-links a {
-  font-size: 13px; font-weight: 500;
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.2s;
-  position: relative;
-}
-.nav-links a:hover { color: var(--accent); }
-.nav-links a::after {
-  content: ''; position: absolute; bottom: -2px; left: 0;
-  width: 0; height: 1.5px; background: var(--accent);
-  transition: width 0.2s;
-}
-.nav-links a:hover::after { width: 100%; }
-.lang-btn {
-  font-size: 11px; font-weight: 600;
-  padding: 4px 12px; border: 1.5px solid var(--border);
-  border-radius: 20px; background: transparent;
-  color: var(--text-secondary); cursor: pointer;
-  transition: all 0.2s; letter-spacing: 0.3px;
-}
-.lang-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
-
-/* ── MAIN ── */
-main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
-
-/* ── HERO ── */
-.hero {
-  display: flex; align-items: center; gap: 28px;
-  padding: 64px 0 48px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 48px;
-}
-.avatar {
-  width: 100px; height: 100px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent) 0%, #7c3aed 100%);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 28px; font-weight: 700; color: #fff;
-  flex-shrink: 0;
-  box-shadow: 0 8px 24px rgba(37,99,235,0.2);
-}
-.hero-info h1 {
-  font-size: 28px; font-weight: 700;
-  color: var(--text); letter-spacing: -0.5px;
-  line-height: 1.2; margin-bottom: 4px;
-}
-.hero-info .subtitle {
-  font-size: 14px; color: var(--text-secondary);
-  font-weight: 400; margin-bottom: 14px;
-}
-.hero-links { display: flex; flex-wrap: wrap; gap: 16px; }
-.hero-links a {
-  font-size: 13px; color: var(--text-secondary);
-  text-decoration: none; display: flex; align-items: center; gap: 5px;
-  transition: color 0.15s;
-}
-.hero-links a:hover { color: var(--accent); }
-.hero-links svg { width: 14px; height: 14px; }
-
-/* ── SECTIONS ── */
-section { margin-bottom: 48px; }
-.sec-title {
-  font-size: 11px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 1.5px;
-  color: var(--muted);
-  margin-bottom: 16px;
-  display: flex; align-items: center; gap: 10px;
-}
-.sec-title::after {
-  content: ''; flex: 1; height: 1px; background: var(--border);
-}
-
-/* ── ABOUT ── */
-.about-text {
-  font-size: 14.5px; color: var(--text-secondary);
-  line-height: 1.8; max-width: 620px;
-}
-.about-text strong { color: var(--text); font-weight: 600; }
-
-/* ── NEWS ── */
-.news-list { list-style: none; }
-.news-item {
-  display: flex; gap: 14px; font-size: 13.5px;
-  padding: 8px 0;
-  border-bottom: 1px solid #f1f5f9;
-}
-.news-item:last-child { border-bottom: none; }
-.news-date {
-  color: var(--muted); font-size: 12px; font-weight: 600;
-  flex-shrink: 0; width: 70px; padding-top: 2px;
-}
-.news-content { color: var(--text-secondary); }
-.news-content strong { color: var(--text); }
-.news-content a { color: var(--accent); text-decoration: none; }
-.news-content a:hover { text-decoration: underline; }
-
-/* ── INTERESTS ── */
-.interests-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.interests-tags span {
-  font-size: 12.5px; font-weight: 500;
-  color: var(--text-secondary);
-  background: var(--bg-soft);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 4px 14px;
-  transition: all 0.2s;
-}
-.interests-tags span:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-light);
-}
-
-/* ── EDUCATION ── */
-.edu-item { display: flex; gap: 16px; margin-bottom: 20px; }
-.edu-logo {
-  width: 42px; height: 42px;
-  border-radius: var(--radius);
-  background: var(--accent-light);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 10px; font-weight: 800; color: var(--accent);
-  flex-shrink: 0; border: 1px solid #dbeafe;
-  letter-spacing: -0.3px;
-}
-.edu-body { flex: 1; }
-.edu-school { font-weight: 600; font-size: 14.5px; color: var(--text); }
-.edu-degree { font-size: 13px; color: var(--text-secondary); margin-top: 1px; }
-.edu-meta {
-  font-size: 12px; color: var(--muted); margin-top: 3px;
-  display: flex; align-items: center; gap: 8px;
-}
-.edu-meta .gpa { color: var(--accent); font-weight: 600; }
-.edu-date { font-size: 12px; color: var(--muted); margin-left: auto; white-space: nowrap; }
-
-/* ── PUBLICATIONS ── */
-.pub-item { margin-bottom: 20px; padding-left: 14px; border-left: 2px solid var(--accent-light); }
-.pub-item:hover { border-left-color: var(--accent); transition: border-color 0.2s; }
-.pub-title-text {
-  font-size: 13.5px; font-weight: 600;
-  color: var(--text); line-height: 1.5;
-  display: block; margin-bottom: 2px;
-}
-.pub-authors { font-size: 12.5px; color: var(--text-secondary); }
-.pub-authors strong { color: var(--text); }
-.pub-venue {
-  font-size: 12px; color: var(--muted); margin-top: 2px;
-  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
-}
-.pub-badge {
-  display: inline-block; font-size: 10px; font-weight: 700;
-  padding: 1px 8px; border-radius: 3px; letter-spacing: 0.3px;
-}
-.pub-badge.wc { background: #dbeafe; color: #1e40af; }
-.pub-badge.q1 { background: #dcfce7; color: #166534; }
-.pub-badge.conf { background: #fef3c7; color: #92400e; }
-.pub-badge.wp { background: #f1f5f9; color: #64748b; }
-.pub-desc {
-  font-size: 12.5px; color: var(--text-secondary);
-  margin-top: 6px; line-height: 1.7;
-  padding: 6px 10px;
-  background: var(--bg-soft);
-  border-radius: 4px;
-}
-
-/* ── EXPERIENCE ── */
-.exp-item { display: flex; gap: 16px; margin-bottom: 16px; }
-.exp-logo {
-  width: 42px; height: 42px; border-radius: var(--radius);
-  background: #fffbeb; display: flex; align-items: center; justify-content: center;
-  font-size: 11px; font-weight: 800; color: #b45309;
-  flex-shrink: 0; border: 1px solid #fde68a;
-}
-.exp-body { flex: 1; }
-.exp-role { font-weight: 600; font-size: 14.5px; color: var(--text); }
-.exp-where { font-size: 13px; color: var(--text-secondary); }
-.exp-date { font-size: 12px; color: var(--muted); float: right; }
-
-/* ── AWARDS ── */
-.award-item {
-  display: flex; align-items: baseline; gap: 12px;
-  font-size: 13.5px; padding: 7px 0;
-  border-bottom: 1px solid #f1f5f9;
-}
-.award-item:last-child { border-bottom: none; }
-.award-year { color: var(--muted); font-size: 12px; font-weight: 600; width: 46px; flex-shrink: 0; }
-
-/* ── HOBBIES ── */
-.hobbies-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 16px; margin-top: 4px;
-}
-.hobby-card {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.hobby-card:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  transform: translateY(-2px);
-}
-.hobby-img {
-  width: 100%; height: 140px;
-  background: linear-gradient(135deg, #dbeafe 0%, #c7d2fe 100%);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 40px;
-}
-.hobby-img.travel-bg {
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #10b981 100%);
-}
-.hobby-img.kpop-bg {
-  background: linear-gradient(135deg, #a78bfa 0%, #ec4899 50%, #f43f5e 100%);
-}
-.hobby-info { padding: 12px 14px; }
-.hobby-name { font-weight: 600; font-size: 14px; color: var(--text); }
-.hobby-desc { font-size: 12px; color: var(--text-secondary); margin-top: 2px; line-height: 1.6; }
-
-/* ── CONTACT ── */
-.contact-text { font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
-.contact-text a { color: var(--accent); text-decoration: none; font-weight: 500; }
-.contact-text a:hover { text-decoration: underline; }
-
-/* ── FOOTER ── */
-footer {
-  max-width: var(--max); margin: 0 auto;
-  padding: 24px; border-top: 1px solid var(--border);
-  font-size: 12px; color: var(--muted); text-align: center;
-}
-
-/* ── Lang toggle ── */
-[data-en], [data-zh] { display: none; }
-body.lang-en [data-en] { display: revert; }
-body.lang-zh [data-zh] { display: revert; }
-
-/* ── Responsive ── */
-@media (max-width: 600px) {
-  .hero { flex-direction: column; gap: 20px; text-align: center; }
-  .hero-links { justify-content: center; }
-  .avatar { width: 80px; height: 80px; font-size: 24px; }
-  .hero-info h1 { font-size: 24px; }
-  .hobbies-grid { grid-template-columns: 1fr; }
-  .nav-links { gap: 16px; }
-  .nav-links a { font-size: 12px; }
-}
-</style>
-</head>
-<body class="lang-en">
-
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">JW</div>
-    <div class="nav-links">
-      <a href="#about" data-en>About</a>
-      <a href="#about" data-zh>关于</a>
-      <a href="#publications" data-en>Publications</a>
-      <a href="#publications" data-zh>论文</a>
-      <a href="#experience" data-en>Experience</a>
-      <a href="#experience" data-zh>经历</a>
-      <a href="#hobbies" data-en>Hobbies</a>
-      <a href="#hobbies" data-zh>爱好</a>
-      <a href="#contact" data-en>Contact</a>
-      <a href="#contact" data-zh>联系</a>
-    </div>
-    <button class="lang-btn" id="langToggle" onclick="toggleLang()">中文</button>
-  </div>
-</nav>
-
-<main>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="avatar">JW</div>
-  <div class="hero-info">
-    <h1 data-en>Jiayi Weng</h1>
-    <h1 data-zh>翁家毅</h1>
-    <div class="subtitle" data-en>M.S. in Applied Statistics · Xi'an Jiaotong University</div>
-    <div class="subtitle" data-zh>应用统计 硕士 · 西安交通大学</div>
-    <div class="hero-links">
-      <a href="mailto:13902996373@163.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        <span>13902996373@163.com</span>
-      </a>
-      <a href="https://scholar.google.com/citations?user=XBC92dYAAAAJ&hl=en" target="_blank">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
-        <span>Google Scholar</span>
-      </a>
-      <a href="https://jiayiweng.org" target="_blank">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        <span>jiayiweng.org</span>
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="sec-title" data-en>About Me</div>
-  <div class="sec-title" data-zh>关于我</div>
-  <p class="about-text" data-en>
-    I am a Master's student in Applied Statistics at <strong>Xi'an Jiaotong University</strong>, supervised by Prof. Zhao Xi and Prof. Li Jian. I received my B.S. in Management Information Systems from <strong>Beijing Jiaotong University</strong>, graduating <em>Top 1%</em> with GPA 91/100. My research sits at the intersection of <strong>AI behavior analysis</strong>, <strong>large language models</strong>, <strong>blockchain mechanism design</strong>, and <strong>digital health</strong>. I have published 4 papers in JCR Q1 journals and have 3 working papers under review or at conferences (WWW, AOM, CSWIM). I am actively seeking PhD opportunities in AI × Economics.
-  </p>
-  <p class="about-text" data-zh>
-    我是<strong>西安交通大学</strong>应用统计专业硕士研究生，导师为赵玺教授与李健教授。本科就读于<strong>北京交通大学</strong>管理信息系统专业，以专业<em>前1%</em>、GPA 91/100毕业。研究方向聚焦于<strong>AI行为分析</strong>、<strong>大语言模型</strong>、<strong>区块链机制设计</strong>与<strong>数字健康</strong>。已在JCR一区期刊发表4篇论文，另有3篇working papers在会议/期刊在审或录用（WWW、AOM、CSWIM）。目前积极申请AI×经济学方向博士项目。
-  </p>
-
-  <!-- NEWS -->
-  <div style="margin-top: 36px;">
-    <div class="sec-title" data-en>News</div>
-    <div class="sec-title" data-zh>动态</div>
-    <ul class="news-list">
-      <li>
-        <span class="news-date">2026.03</span>
-        <span class="news-content" data-en>Paper on <em>LLM-based DAO simulation</em> submitted to <strong>WWW 2026</strong> (CCF-A).</span>
-        <span class="news-content" data-zh>基于LLM的DAO仿真论文投稿至 <strong>WWW 2026</strong>（CCF-A）。</span>
-      </li>
-      <li>
-        <span class="news-date">2026.01</span>
-        <span class="news-content" data-en>Paper on <em>LLM sycophancy</em> submitted to <strong>AOM 2026</strong>; under review at <em>Telematics &amp; Informatics</em>.</span>
-        <span class="news-content" data-zh>LLM谄媚行为论文投稿至 <strong>AOM 2026</strong>；同步在审 <em>Telematics &amp; Informatics</em>。</span>
-      </li>
-      <li>
-        <span class="news-date">2025.12</span>
-        <span class="news-content" data-en>Paper on <em>blockchain data supply chain</em> accepted at <strong>CSWIM 2026</strong>.</span>
-        <span class="news-content" data-zh>区块链数据供应链论文被 <strong>CSWIM 2026</strong> 接收。</span>
-      </li>
-      <li>
-        <span class="news-date">2025.10</span>
-        <span class="news-content" data-en>Paper on <em>LLM sycophancy</em> accepted at <strong>CNAIS 2025</strong>.</span>
-        <span class="news-content" data-zh>LLM谄媚行为论文被 <strong>CNAIS 2025</strong> 接收。</span>
-      </li>
-    </ul>
-  </div>
-
-  <!-- RESEARCH INTERESTS -->
-  <div style="margin-top: 36px;">
-    <div class="sec-title" data-en>Research Interests</div>
-    <div class="sec-title" data-zh>研究兴趣</div>
-    <div class="interests-tags">
-      <span data-en>Large Language Models</span><span data-zh>大语言模型</span>
-      <span data-en>AI Behavior Analysis</span><span data-zh>AI行为分析</span>
-      <span data-en>Blockchain &amp; DAO</span><span data-zh>区块链与DAO</span>
-      <span data-en>Agent-Based Simulation</span><span data-zh>多智能体仿真</span>
-      <span data-en>Digital Health</span><span data-zh>数字健康</span>
-    </div>
-  </div>
-
-  <!-- EDUCATION -->
-  <div style="margin-top: 36px;">
-    <div class="sec-title" data-en>Education</div>
-    <div class="sec-title" data-zh>教育背景</div>
-    <div class="edu-item">
-      <div class="edu-logo">XJTU</div>
-      <div class="edu-body">
-        <div class="edu-date" data-en>Sep 2024 – Present</div>
-        <div class="edu-date" data-zh>2024.09 – 至今</div>
-        <div class="edu-school" data-en>Xi'an Jiaotong University</div>
-        <div class="edu-school" data-zh>西安交通大学</div>
-        <div class="edu-degree" data-en>M.S. in Applied Statistics · School of Mathematics and Statistics</div>
-        <div class="edu-degree" data-zh>应用统计 硕士 · 数学与统计学院</div>
-        <div class="edu-meta"><span class="gpa">GPA 88/100</span></div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Jiayi Weng — applied statistics, human–AI interaction, digital economy, and explainable machine learning.">
+    <meta name="theme-color" content="#0b1f33">
+    <title>Jiayi Weng · 翁家毅</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="nav-shell">
+        <a class="brand" href="index.html" aria-label="Jiayi Weng home">
+          <span class="brand-mark">JW</span>
+          <span class="brand-name">Jiayi Weng · 翁家毅</span>
+        </a>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation">
+          <span></span><span></span>
+        </button>
+        <nav class="nav-links" id="site-navigation" data-navigation aria-label="Primary navigation">
+          <a href="index.html" aria-current="page" data-i18n="navHome">Home</a>
+          <a href="research.html" data-i18n="navResearch">Research</a>
+          <a href="experience.html" data-i18n="navExperience">Experience</a>
+          <a href="gallery.html" data-i18n="navGallery">Gallery</a>
+          <div class="language-switcher" aria-label="Language">
+            <button type="button" data-lang="en" aria-pressed="true">EN</button>
+            <button type="button" data-lang="zh" aria-pressed="false">中</button>
+            <button type="button" data-lang="ja" aria-pressed="false">日</button>
+          </div>
+        </nav>
       </div>
-    </div>
-    <div class="edu-item">
-      <div class="edu-logo">BJTU</div>
-      <div class="edu-body">
-        <div class="edu-date" data-en>Sep 2020 – Jun 2024</div>
-        <div class="edu-date" data-zh>2020.09 – 2024.06</div>
-        <div class="edu-school" data-en>Beijing Jiaotong University</div>
-        <div class="edu-school" data-zh>北京交通大学</div>
-        <div class="edu-degree" data-en>B.S. in Management Information Systems · School of Economics and Management</div>
-        <div class="edu-degree" data-zh>管理信息系统 学士 · 经济与管理学院</div>
-        <div class="edu-meta">
-          <span class="gpa">GPA 91/100</span>
-          <span data-en>· Top 1% · National Scholarship · Outstanding Graduate of Beijing</span>
-          <span data-zh>· 专业前1% · 国家奖学金 · 北京市优秀毕业生</span>
+    </header>
+
+    <main class="page" id="main">
+      <section class="shell hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow" data-i18n="homeEyebrow">Applied statistics · human-centered AI · digital economy</p>
+          <h1>Jiayi<br>Weng<span class="cn-name">翁家毅</span></h1>
+          <p class="hero-lead" data-i18n="homeLead">I study how data, intelligent systems, and collective behavior meet — from explainable health models to human–AI interaction and digital markets.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="research.html">
+              <span data-i18n="exploreResearch">Explore research</span>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-arrow"></use></svg>
+            </a>
+            <a class="button secondary" href="experience.html" data-i18n="viewExperience">View experience</a>
+          </div>
         </div>
+
+        <aside class="portrait-stage reveal" aria-label="Profile">
+          <div class="portrait-frame">
+            <img src="assets/img/portrait.jpg" alt="Portrait of Jiayi Weng" data-portrait width="1086" height="1448">
+            <span class="portrait-index">CN 23.13° N</span>
+          </div>
+          <div class="social-links" aria-label="Academic and social profiles">
+            <a href="mailto:KayiWeng@stu.xjtu.edu.cn" aria-label="Email" title="Email">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-mail"></use></svg>
+            </a>
+            <a href="https://scholar.google.com/citations?user=XBC92dYAAAAJ&amp;hl=en" aria-label="Google Scholar" title="Google Scholar" target="_blank" rel="noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-scholar"></use></svg>
+            </a>
+            <a href="https://orcid.org/0009-0006-9974-2419" aria-label="ORCID" title="ORCID" target="_blank" rel="noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-orcid"></use></svg>
+            </a>
+            <a href="https://www.researchgate.net/profile/Jiayi-Weng-7" aria-label="ResearchGate" title="ResearchGate" target="_blank" rel="noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-researchgate"></use></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/weng-jiayi-b973362a9/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-linkedin"></use></svg>
+            </a>
+            <a href="https://github.com/encorenuit" aria-label="GitHub" title="GitHub" target="_blank" rel="noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-github"></use></svg>
+            </a>
+            <a href="https://openreview.net/profile?id=~Weng_Jiayi1" aria-label="OpenReview" title="OpenReview" target="_blank" rel="noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-openreview"></use></svg>
+            </a>
+            <a href="gallery.html" aria-label="Photo gallery" title="Photo gallery">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-arrow"></use></svg>
+            </a>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" aria-labelledby="research-map-title">
+        <div class="shell">
+          <header class="section-heading reveal">
+            <div class="section-number">01 · <span data-i18n="researchMapKicker">Research coordinates</span></div>
+            <div>
+              <h2 id="research-map-title" data-i18n="researchMapTitle">Three questions shape my work</h2>
+              <p data-i18n="researchMapIntro">My projects connect statistical learning with real decisions made by people, organizations, and digital communities.</p>
+            </div>
+          </header>
+          <div class="research-map reveal">
+            <article class="research-node">
+              <span class="axis" data-i18n="axisOne">People × AI</span>
+              <h3 data-i18n="axisOneTitle">Human–AI interaction</h3>
+              <p data-i18n="axisOneBody">How language models influence satisfaction, trust, emotion, and decision making.</p>
+            </article>
+            <article class="research-node">
+              <span class="axis" data-i18n="axisTwo">Markets × Agents</span>
+              <h3 data-i18n="axisTwoTitle">Digital economy</h3>
+              <p data-i18n="axisTwoBody">How incentives, governance, and agent behavior produce outcomes in data markets, DeFi, and Web3.</p>
+            </article>
+            <article class="research-node">
+              <span class="axis" data-i18n="axisThree">Models × Evidence</span>
+              <h3 data-i18n="axisThreeTitle">Explainable machine learning</h3>
+              <p data-i18n="axisThreeBody">How interpretable models support credible analysis in health, management, and social research.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="selected-title">
+        <div class="shell">
+          <header class="section-heading reveal">
+            <div class="section-number">02 · <span data-i18n="selectedKicker">Selected work</span></div>
+            <div>
+              <h2 id="selected-title" data-i18n="selectedTitle">Recent publications</h2>
+              <p data-i18n="selectedIntro">A selection across health informatics, computational social science, and technology management.</p>
+            </div>
+          </header>
+          <div class="selected-list reveal">
+            <article class="selected-paper paper">
+              <div class="paper-year">2026 · BMJ OPEN</div>
+              <div>
+                <h3>Assessing community resilience during the first COVID-19 wave peak in a megacity in eastern China</h3>
+                <p class="paper-authors">Lanyue Zhang, Shouchuang Zhang, Yuehui Wei, Danijela Gasevic, Stella Talic, Jiayi Weng, et al.</p>
+                <p class="paper-venue">BMJ Open 16(5), e104115</p>
+              </div>
+              <a class="paper-link" href="https://scholar.google.com/citations?user=XBC92dYAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Scholar ↗</a>
+            </article>
+            <article class="selected-paper paper">
+              <div class="paper-year">2025 · JMIR</div>
+              <div>
+                <h3>Explainable Machine Learning Model for Predicting Persistent Sepsis-Associated Acute Kidney Injury</h3>
+                <p class="paper-authors">Wei Jiang, Yaosheng Zhang, Jiayi Weng, et al.</p>
+                <p class="paper-venue">Journal of Medical Internet Research 27, e62932</p>
+              </div>
+              <a class="paper-link" href="https://doi.org/10.2196/62932" target="_blank" rel="noreferrer">DOI ↗</a>
+            </article>
+            <article class="selected-paper paper">
+              <div class="paper-year">2025 · PACIS</div>
+              <div>
+                <h3>The Coldness of Your Explanation: How Emotional Intensity in Large Language Models Shapes User Satisfaction</h3>
+                <p class="paper-authors">S. Lu and Jiayi Weng</p>
+                <p class="paper-venue">Pacific Asia Conference on Information Systems 2025</p>
+              </div>
+              <a class="paper-link" href="research.html#conference" data-i18n="allResearch">All research</a>
+            </article>
+          </div>
+          <div class="hero-actions">
+            <a class="button secondary" href="research.html">
+              <span data-i18n="allResearch">All research</span>
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-arrow"></use></svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="now-title">
+        <div class="shell">
+          <header class="section-heading reveal">
+            <div class="section-number">03 · <span data-i18n="nowKicker">Now</span></div>
+            <div>
+              <h2 id="now-title" data-i18n="nowTitle">Learning and building in parallel</h2>
+              <p data-i18n="nowIntro">My current work spans academic research and the operations of an early-stage technology company.</p>
+            </div>
+          </header>
+          <div class="now-grid reveal">
+            <article class="now-card">
+              <span class="status" data-i18n="nowStudyStatus">Graduate study</span>
+              <h3 data-i18n="nowStudyTitle">MSc in Applied Statistics</h3>
+              <p data-i18n="nowStudyBody">School of Mathematics and Statistics, Xi’an Jiaotong University. Research interests include social computing, HCI, FinTech, and explainable AI.</p>
+            </article>
+            <article class="now-card">
+              <span class="status" data-i18n="nowWorkStatus">Industry</span>
+              <h3 data-i18n="nowWorkTitle">Chief Operating Officer</h3>
+              <p data-i18n="nowWorkBody">Phasurge Tech Co., Ltd., Shenzhen. I work across operations, commercial analysis, and the translation of technology into deployable products.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <h2 data-i18n="footerTitle">Let’s compare notes.</h2>
+          <p><span data-i18n="footerBody">Academic conversations, research collaboration, and thoughtful ideas are welcome.</span><br>© <span data-year></span> Jiayi Weng</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="mailto:KayiWeng@stu.xjtu.edu.cn">KayiWeng@stu.xjtu.edu.cn</a>
+          <a href="https://scholar.google.com/citations?user=XBC92dYAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a href="https://github.com/encorenuit" target="_blank" rel="noreferrer">GitHub</a>
+        </nav>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- PUBLICATIONS -->
-<section id="publications">
-  <div class="sec-title" data-en>Publications</div>
-  <div class="sec-title" data-zh>论文成果</div>
-
-  <p style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;" data-en>Working Papers / Under Review</p>
-  <p style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;" data-zh>在审 / Working Papers</p>
-
-  <div class="pub-item">
-    <span class="pub-title-text">Always on Your Side: The Dual Pathways of Large Language Model Sycophancy in Shaping User Satisfaction</span>
-    <div class="pub-authors"><strong>Jiayi Weng</strong>, et al.</div>
-    <div class="pub-venue">
-      <span data-en>Under review, <em>Telematics and Informatics</em></span>
-      <span data-zh>在审，<em>Telematics and Informatics</em></span>
-      <span class="pub-badge conf">CNAIS 2025</span>
-      <span class="pub-badge conf">AOM 2026</span>
-    </div>
-    <div class="pub-desc" data-en>
-      Investigated how LLM sycophancy — the tendency of models to agree with users — shapes user satisfaction through dual pathways: perceived helpfulness and trust erosion. Used mixed-methods experiments with GPT-4 and Claude to reveal a non-linear relationship where moderate alignment increases satisfaction, but excessive sycophancy triggers distrust.
-    </div>
-    <div class="pub-desc" data-zh>
-      探究LLM谄媚行为——模型迎合用户倾向——如何通过「感知有用性」和「信任侵蚀」双重路径影响用户满意度。基于GPT-4和Claude开展混合方法实验，揭示了适度对齐提升满意度、过度谄媚反而引发不信任的非线性关系。
-    </div>
-  </div>
-
-  <div class="pub-item">
-    <span class="pub-title-text">Tokenized Coordination for Data Supply Chain: A Blockchain-Based Mechanism Design with Agent-Based Simulation</span>
-    <div class="pub-authors"><strong>Jiayi Weng</strong>, et al.</div>
-    <div class="pub-venue">
-      <span data-en><em>CSWIM 2026</em> (Accepted)</span>
-      <span data-zh><em>CSWIM 2026</em>（已录用）</span>
-      <span class="pub-badge conf">CSWIM 2026</span>
-    </div>
-    <div class="pub-desc" data-en>
-      Designed a tokenization mechanism for decentralized data supply chains, where data contributors are incentivized via smart contracts. Validated the mechanism through large-scale agent-based simulation (ABM), demonstrating improved coordination efficiency and fairness compared to traditional data marketplaces.
-    </div>
-    <div class="pub-desc" data-zh>
-      为去中心化数据供应链设计了代币化激励机制，数据贡献者通过智能合约获得激励。通过大规模多智能体仿真（ABM）验证了该机制在协调效率和公平性上优于传统数据交易平台。
-    </div>
-  </div>
-
-  <div class="pub-item">
-    <span class="pub-title-text">LLM-based DAO Governance Simulation: A Multi-Agent Framework</span>
-    <div class="pub-authors"><strong>Jiayi Weng</strong>, et al.</div>
-    <div class="pub-venue">
-      <span data-en>Submitted to <em>The Web Conference (WWW)</em>, 2026</span>
-      <span data-zh>投稿至 <em>The Web Conference (WWW)</em>，2026</span>
-      <span class="pub-badge wc">CCF-A</span>
-      <span class="pub-badge wp" data-en>Under Review</span>
-      <span class="pub-badge wp" data-zh>在审</span>
-    </div>
-  </div>
-
-  <p style="font-size:11px;font-weight:700;color:var(--muted);margin:24px 0 14px;text-transform:uppercase;letter-spacing:1px;" data-en>Published Papers</p>
-  <p style="font-size:11px;font-weight:700;color:var(--muted);margin:24px 0 14px;text-transform:uppercase;letter-spacing:1px;" data-zh>已发表论文</p>
-
-  <div class="pub-item">
-    <span class="pub-title-text">Digital Health Informatics Research</span>
-    <div class="pub-authors">…, <strong>Jiayi Weng</strong> (1st Co-author), et al.</div>
-    <div class="pub-venue">
-      <em>Journal of Medical Internet Research (JMIR)</em>
-      <span class="pub-badge q1">JCR Q1</span>
-    </div>
-  </div>
-
-  <div class="pub-item">
-    <span class="pub-title-text">Digital Health Research</span>
-    <div class="pub-authors">…, <strong>Jiayi Weng</strong> (3rd Author), et al.</div>
-    <div class="pub-venue">
-      <em>Journal of Gastroenterology and Hepatology (JGH)</em>
-      <span class="pub-badge q1">JCR Q1</span>
-    </div>
-  </div>
-
-  <div class="pub-item">
-    <span class="pub-title-text">Neuroscience Informatics Research</span>
-    <div class="pub-authors">…, <strong>Jiayi Weng</strong> (4th Author), et al.</div>
-    <div class="pub-venue">
-      <em>Journal of Affective Disorders (JAD)</em>
-      <span class="pub-badge q1">JCR Q1</span>
-    </div>
-  </div>
-
-  <div class="pub-item">
-    <span class="pub-title-text">Management Research</span>
-    <div class="pub-authors"><strong>Jiayi Weng</strong>, et al.</div>
-    <div class="pub-venue">
-      <em>Technological Analysis &amp; Strategic Management (TASM)</em>
-      <span class="pub-badge conf">ABS 2</span>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="sec-title" data-en>Experience</div>
-  <div class="sec-title" data-zh>经历</div>
-
-  <div class="exp-item">
-    <div class="exp-logo">华泰</div>
-    <div class="exp-body">
-      <span class="exp-date" data-en>Dec 2024 – Feb 2025</span>
-      <span class="exp-date" data-zh>2024.12 – 2025.02</span>
-      <div class="exp-role" data-en>Industry Research Analyst Intern</div>
-      <div class="exp-role" data-zh>行业研究员（实习）</div>
-      <div class="exp-where" data-en>Huatai Securities · Shenzhen</div>
-      <div class="exp-where" data-zh>华泰证券 · 深圳</div>
-    </div>
-  </div>
-
-  <!-- AWARDS -->
-  <div style="margin-top: 36px;">
-    <div class="sec-title" data-en>Honors &amp; Awards</div>
-    <div class="sec-title" data-zh>荣誉奖项</div>
-    <div class="award-item">
-      <span class="award-year">2024</span>
-      <span data-en>National Scholarship (Top 1% nationally)</span>
-      <span data-zh>国家奖学金（全国前1%）</span>
-    </div>
-    <div class="award-item">
-      <span class="award-year">2024</span>
-      <span data-en>Outstanding Graduate of Beijing Municipality</span>
-      <span data-zh>北京市优秀毕业生</span>
-    </div>
-    <div class="award-item">
-      <span class="award-year">2022–24</span>
-      <span data-en>First-Class Academic Excellence Scholarship (Top 3%)</span>
-      <span data-zh>一等学习优秀奖学金（前3%）</span>
-    </div>
-  </div>
-</section>
-
-<!-- HOBBIES -->
-<section id="hobbies">
-  <div class="sec-title" data-en>Hobbies</div>
-  <div class="sec-title" data-zh>兴趣爱好</div>
-  <div class="hobbies-grid">
-    <div class="hobby-card">
-      <div class="hobby-img travel-bg">✈️</div>
-      <div class="hobby-info">
-        <div class="hobby-name" data-en>Travel</div>
-        <div class="hobby-name" data-zh>旅行</div>
-        <div class="hobby-desc" data-en>Exploring new places and cultures — always planning the next trip.</div>
-        <div class="hobby-desc" data-zh>喜欢探索新的地方与文化，永远在规划下一次旅行。</div>
-      </div>
-    </div>
-    <div class="hobby-card">
-      <div class="hobby-img kpop-bg">🎵</div>
-      <div class="hobby-info">
-        <div class="hobby-name" data-en>K-Pop</div>
-        <div class="hobby-name" data-zh>K-Pop</div>
-        <div class="hobby-desc" data-en>A long-time K-pop enthusiast — concerts, music, and the fandom experience.</div>
-        <div class="hobby-desc" data-zh>资深K-pop爱好者，演唱会、打歌舞台，享受每一个舞台。</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="sec-title" data-en>Contact</div>
-  <div class="sec-title" data-zh>联系方式</div>
-  <p class="contact-text" data-en>
-    Feel free to reach me at <a href="mailto:13902996373@163.com">13902996373@163.com</a>. Open to research collaborations and PhD opportunities in AI × Economics / ISOM.
-  </p>
-  <p class="contact-text" data-zh>
-    欢迎通过 <a href="mailto:13902996373@163.com">13902996373@163.com</a> 联系我。期待AI×经济学/信息系统方向的科研合作与博士机会。
-  </p>
-</section>
-
-</main>
-
-<footer>
-  <span data-en>© 2026 Jiayi Weng · jiayiweng.org</span>
-  <span data-zh>© 2026 翁家毅 · jiayiweng.org</span>
-</footer>
-
-<script>
-function toggleLang() {
-  const body = document.body;
-  const btn = document.getElementById('langToggle');
-  if (body.classList.contains('lang-en')) {
-    body.classList.replace('lang-en', 'lang-zh');
-    btn.textContent = 'English';
-    document.documentElement.lang = 'zh';
-  } else {
-    body.classList.replace('lang-zh', 'lang-en');
-    btn.textContent = '中文';
-    document.documentElement.lang = 'en';
-  }
-}
-</script>
-</body>
+    </footer>
+  </body>
 </html>

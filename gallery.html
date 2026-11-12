@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A personal photography archive by Jiayi Weng.">
-    <meta name="theme-color" content="#0b1f33">
+    <meta name="theme-color" content="#f7f8fa">
     <title>Gallery · Jiayi Weng</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -29,37 +29,36 @@
     <main class="page" id="main">
       <section class="shell page-intro">
         <div class="gallery-intro reveal">
-          <p class="eyebrow" data-i18n="galleryEyebrow">Personal field notes</p>
           <h1 data-i18n="galleryTitle">Gallery</h1>
-          <p class="intro-copy" data-i18n="galleryIntro">A slower archive for photographs made outside research — places, light, and ordinary moments worth keeping.</p>
+          <p class="intro-copy" data-i18n="galleryIntro">Photographs from places I have passed through and moments I wanted to keep.</p>
         </div>
-        <aside class="index-card reveal"><span data-i18n="galleryIndexLabel">Archive status</span><strong data-i18n="galleryIndexValue">First series in preparation</strong></aside>
       </section>
 
       <section class="shell" aria-label="Photography archive">
-        <div class="gallery-stage reveal">
-          <article class="photo-placeholder">
-            <span class="frame-no">FRAME 001</span>
-            <h2 data-i18n="frameOne">Urban traces</h2>
-            <p data-i18n="awaitingPhoto">This frame is ready for an original photograph.</p>
-          </article>
-          <article class="photo-placeholder">
-            <span class="frame-no">FRAME 002</span>
-            <h2 data-i18n="frameTwo">Light studies</h2>
-            <p data-i18n="awaitingPhoto">This frame is ready for an original photograph.</p>
-          </article>
-          <article class="photo-placeholder">
-            <span class="frame-no">FRAME 003</span>
-            <h2 data-i18n="frameThree">Field notes</h2>
-            <p data-i18n="awaitingPhoto">This frame is ready for an original photograph.</p>
-          </article>
-        </div>
-        <div class="gallery-note reveal">
-          <strong data-i18n="galleryNoteLabel">No stock imagery</strong>
-          <p data-i18n="galleryNoteBody">This page is intentionally prepared without invented photographs. Original images can be added to the gallery folder and published with captions, place, year, and optional camera notes.</p>
+        <div class="photo-wall reveal">
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-01.jpg"><img src="assets/gallery/gallery-01.jpg" alt="Photograph 1 from Jiayi Weng's gallery" loading="eager"></button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-02.jpg"><img src="assets/gallery/gallery-02.jpg" alt="Photograph 2 from Jiayi Weng's gallery" loading="lazy"></button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-03.jpg"><img src="assets/gallery/gallery-03.jpg" alt="Photograph 3 from Jiayi Weng's gallery" loading="lazy"></button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-04.jpg"><img src="assets/gallery/gallery-04.jpg" alt="Photograph 4 from Jiayi Weng's gallery" loading="lazy"></button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-05.jpg"><img src="assets/gallery/gallery-05.jpg" alt="Photograph 5 from Jiayi Weng's gallery" loading="lazy"></button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-06.jpg"><img src="assets/gallery/gallery-06.jpg" alt="Photograph 6 from Jiayi Weng's gallery" loading="lazy"></button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-07.jpg"><img src="assets/gallery/gallery-07.jpg" alt="Photograph 7 from Jiayi Weng's gallery" loading="lazy"></button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-08.jpg"><img src="assets/gallery/gallery-08.jpg" alt="Photograph 8 from Jiayi Weng's gallery" loading="lazy"></button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-09.jpg"><img src="assets/gallery/gallery-09.jpg" alt="Photograph 9 from Jiayi Weng's gallery" loading="lazy"></button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-10.jpg"><img src="assets/gallery/gallery-10.jpg" alt="Photograph 10 from Jiayi Weng's gallery" loading="lazy"></button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-11.jpg"><img src="assets/gallery/gallery-11.jpg" alt="Photograph 11 from Jiayi Weng's gallery" loading="lazy"></button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-12.jpg"><img src="assets/gallery/gallery-12.jpg" alt="Photograph 12 from Jiayi Weng's gallery" loading="lazy"></button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-13.jpg"><img src="assets/gallery/gallery-13.jpg" alt="Photograph 13 from Jiayi Weng's gallery" loading="lazy"></button>
         </div>
       </section>
     </main>
+
+    <dialog class="lightbox" data-lightbox-dialog aria-label="Image viewer">
+      <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close image viewer">×</button>
+      <button class="lightbox-nav previous" type="button" data-lightbox-previous aria-label="Previous photograph">←</button>
+      <img alt="Selected gallery photograph" data-lightbox-image>
+      <button class="lightbox-nav next" type="button" data-lightbox-next aria-label="Next photograph">→</button>
+    </dialog>
 
     <footer class="site-footer">
       <div class="shell footer-grid">

@@ -27,4 +27,4 @@ Recommended image size: 1800–2400 px on the long edge, under 700 KB per file.
 
 ## Privacy
 
-The site intentionally excludes phone numbers, home addresses, identity numbers, family details, and the private résumé source file. The published contact method is the academic email address only.
+The downloadable Chinese CV is a public copy with the phone number removed. The site excludes the original résumé file, home addresses, identity numbers, and family details.

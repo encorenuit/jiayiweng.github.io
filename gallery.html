@@ -4,11 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A personal photography archive by Jiayi Weng.">
-    <meta name="theme-color" content="#f7f8fa">
+    <meta name="theme-color" content="#faf4e8">
     <title>Gallery · Jiayi Weng</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/css/styles.css?v=3">
-    <script src="assets/js/main.js?v=3" defer></script>
+    <script>
+      try {
+        const theme = localStorage.getItem("jiayi-theme");
+        if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css?v=4">
+    <script src="assets/js/main.js?v=4" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -20,8 +26,17 @@
           <a href="research.html" data-i18n="navResearch">Research</a>
           <a href="experience.html" data-i18n="navExperience">Experience</a>
           <a href="gallery.html" aria-current="page" data-i18n="navGallery">Gallery</a>
-          <div class="language-switcher" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="zh" aria-pressed="false">中</button><button type="button" data-lang="ja" aria-pressed="false">日</button></div>
+          <div class="language-switcher" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="zh" aria-pressed="false">中</button></div>
         </nav>
+        <div class="site-controls">
+          <button class="site-control" type="button" data-sakura aria-label="Scatter cherry blossom petals" title="Scatter cherry blossom petals">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1-1.1 2.7-.7 3.4.6.6 1.2.3 2.8-.1 3.8 1-.7 2.6-1.3 3.8-.9 1.5.4 2.2 1.9 1.4 3.2 1.3.6 1.5 2.3.5 3.4-.9 1-2.5 1.2-3.7 1.2 1 .8 2 2.1 2 3.4 0 1.6-1.3 2.7-2.8 2.4-.2 1.5-1.7 2.1-3 1.4-1.2-.6-1.9-2.1-2.1-3.2-.4 1.1-1.2 2.6-2.4 3-1.4.5-2.8-.3-2.8-1.8-1.5.1-2.6-1.2-2.4-2.7.2-1.3 1.4-2.4 2.4-3-1.2-.1-2.8-.5-3.6-1.5-.9-1.2-.4-2.8 1-3.3-.6-1.4.3-2.8 1.8-3 1.3-.2 2.7.6 3.6 1.4-.3-1.1-.4-2.8.3-3.8.8-1.3 2.5-1.5 3.7-.6Z"/><circle cx="12" cy="12" r="1.3"/></svg>
+          </button>
+          <button class="site-control" type="button" data-theme-toggle aria-label="Dark mode" aria-pressed="false" title="Dark mode">
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 13a9 9 0 0 1-10-10 9 9 0 1 0 10 10Z"/></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -34,70 +49,64 @@
       </section>
 
       <section class="shell" aria-label="Photography archive">
-        <div class="photo-wall">
-          <div class="photo-row">
-            <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-06.jpg">
-              <img src="assets/gallery/gallery-06.jpg" width="1707" height="1280" alt="Coastal town beneath a blue sky" loading="eager" decoding="async">
-            </button>
-            <button class="gallery-item vertical" type="button" data-gallery-src="assets/gallery/gallery-09.jpg">
-              <img src="assets/gallery/gallery-09.jpg" width="1280" height="1707" alt="Gundam statue against the sky" loading="eager" decoding="async">
-            </button>
-            <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-10.jpg">
-              <img src="assets/gallery/gallery-10.jpg" width="1707" height="1280" alt="Cherry blossoms along a street" loading="eager" decoding="async">
-            </button>
+        <div class="gallery-tools">
+          <p id="gallery-help" data-i18n="galleryHelp">Swipe or drag to browse. Hold a photo to enlarge it.</p>
+          <div class="gallery-arrows">
+            <button class="site-control" type="button" data-gallery-previous aria-label="Previous photo" title="Previous photo" aria-controls="photo-strip">←</button>
+            <button class="site-control" type="button" data-gallery-next aria-label="Next photo" title="Next photo" aria-controls="photo-strip">→</button>
           </div>
-          <div class="photo-row pair">
-            <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-03.jpg">
-              <img src="assets/gallery/gallery-03.jpg" width="1280" height="960" alt="A small plush toy overlooking the sea" loading="lazy" decoding="async">
-            </button>
-            <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-07.jpg">
-              <img src="assets/gallery/gallery-07.jpg" width="1707" height="1280" alt="Sign outside Asama Shrine" loading="lazy" decoding="async">
-            </button>
-          </div>
-          <div class="photo-row">
-            <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-04.jpg">
-              <img src="assets/gallery/gallery-04.jpg" width="1707" height="1280" alt="Tree-lined city street" loading="lazy" decoding="async">
-            </button>
-            <button class="gallery-item vertical" type="button" data-gallery-src="assets/gallery/gallery-02.jpg">
-              <img src="assets/gallery/gallery-02.jpg" width="1280" height="1707" alt="A table set with lunch and coffee" loading="lazy" decoding="async">
-            </button>
-            <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-05.jpg">
-              <img src="assets/gallery/gallery-05.jpg" width="1707" height="1280" alt="An omelette and a drink" loading="lazy" decoding="async">
-            </button>
-          </div>
-          <div class="photo-row pair">
-            <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-08.jpg">
-              <img src="assets/gallery/gallery-08.jpg" width="1707" height="1280" alt="An IVE display at a shop" loading="lazy" decoding="async">
-            </button>
-            <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-13.jpg">
-              <img src="assets/gallery/gallery-13.jpg" width="1707" height="1280" alt="A Kumamon figure in front of a colorful wall" loading="lazy" decoding="async">
-            </button>
-          </div>
-          <div class="photo-row">
-            <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-01.jpg">
-              <img src="assets/gallery/gallery-01.jpg" width="1707" height="1280" alt="A meal by the window" loading="lazy" decoding="async">
-            </button>
-            <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-11.jpg">
-              <img src="assets/gallery/gallery-11.jpg" width="1707" height="1280" alt="Vending machines beneath cherry blossoms" loading="lazy" decoding="async">
-            </button>
-            <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-12.jpg">
-              <img src="assets/gallery/gallery-12.jpg" width="1707" height="1280" alt="A glass-fronted city building" loading="lazy" decoding="async">
-            </button>
-          </div>
+        </div>
+        <div class="photo-strip" id="photo-strip" data-photo-strip aria-describedby="gallery-help">
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-06.jpg">
+            <img src="assets/gallery/gallery-06.jpg" width="1707" height="1280" alt="Coastal town beneath a blue sky" loading="eager" decoding="async">
+          </button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-09.jpg">
+            <img src="assets/gallery/gallery-09.jpg" width="1280" height="1707" alt="Gundam statue against the sky" loading="eager" decoding="async">
+          </button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-10.jpg">
+            <img src="assets/gallery/gallery-10.jpg" width="1707" height="1280" alt="Cherry blossoms along a street" loading="eager" decoding="async">
+          </button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-03.jpg">
+            <img src="assets/gallery/gallery-03.jpg" width="1280" height="960" alt="A small plush toy overlooking the sea" loading="lazy" decoding="async">
+          </button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-07.jpg">
+            <img src="assets/gallery/gallery-07.jpg" width="1707" height="1280" alt="Sign outside Asama Shrine" loading="lazy" decoding="async">
+          </button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-04.jpg">
+            <img src="assets/gallery/gallery-04.jpg" width="1707" height="1280" alt="Tree-lined city street" loading="lazy" decoding="async">
+          </button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-02.jpg">
+            <img src="assets/gallery/gallery-02.jpg" width="1280" height="1707" alt="A table set with lunch and coffee" loading="lazy" decoding="async">
+          </button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-05.jpg">
+            <img src="assets/gallery/gallery-05.jpg" width="1707" height="1280" alt="An omelette and a drink" loading="lazy" decoding="async">
+          </button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-08.jpg">
+            <img src="assets/gallery/gallery-08.jpg" width="1707" height="1280" alt="An IVE display at a shop" loading="lazy" decoding="async">
+          </button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-13.jpg">
+            <img src="assets/gallery/gallery-13.jpg" width="1707" height="1280" alt="A Kumamon figure in front of a colorful wall" loading="lazy" decoding="async">
+          </button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-01.jpg">
+            <img src="assets/gallery/gallery-01.jpg" width="1707" height="1280" alt="A meal by the window" loading="lazy" decoding="async">
+          </button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-11.jpg">
+            <img src="assets/gallery/gallery-11.jpg" width="1707" height="1280" alt="Vending machines beneath cherry blossoms" loading="lazy" decoding="async">
+          </button>
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-12.jpg">
+            <img src="assets/gallery/gallery-12.jpg" width="1707" height="1280" alt="A glass-fronted city building" loading="lazy" decoding="async">
+          </button>
         </div>
       </section>
     </main>
 
-    <dialog class="lightbox" data-lightbox-dialog aria-label="Image viewer">
-      <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close image viewer">×</button>
-      <button class="lightbox-nav previous" type="button" data-lightbox-previous aria-label="Previous photograph">←</button>
-      <img alt="Selected gallery photograph" data-lightbox-image>
-      <button class="lightbox-nav next" type="button" data-lightbox-next aria-label="Next photograph">→</button>
-    </dialog>
+    <div class="gallery-preview" data-gallery-preview aria-hidden="true" hidden>
+      <img alt="">
+    </div>
 
     <footer class="site-footer">
       <div class="shell footer-grid">
-        <div><h2 data-i18n="footerTitle">Let’s compare notes.</h2><p><span data-i18n="footerBody">Academic conversations, research collaboration, and thoughtful ideas are welcome.</span><br>© <span data-year></span> Jiayi Weng</p></div>
+        <div><h2 data-i18n="footerTitle">Contact</h2><p>© <span data-year></span> Jiayi Weng</p></div>
         <nav class="footer-links" aria-label="Footer links"><a href="mailto:KayiWeng@stu.xjtu.edu.cn">KayiWeng@stu.xjtu.edu.cn</a><a href="research.html">Research</a><a href="index.html">Home</a></nav>
       </div>
     </footer>

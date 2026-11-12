@@ -4,17 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A personal photography archive by Jiayi Weng.">
-    <meta name="theme-color" content="#faf4e8">
+    <meta name="theme-color" content="#161d29">
     <title>Gallery · Jiayi Weng</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <script>
+      const seasons = ["winter", "spring", "summer", "autumn"];
+      const calendarSeason = () => seasons[Math.floor((new Date().getMonth() + 1) / 3) % 4];
+      document.documentElement.dataset.season = calendarSeason();
       try {
         const theme = localStorage.getItem("jiayi-theme");
         if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+        const season = localStorage.getItem("jiayi-season");
+        if (seasons.includes(season)) document.documentElement.dataset.season = season;
       } catch {}
     </script>
-    <link rel="stylesheet" href="assets/css/styles.css?v=4">
-    <script src="assets/js/main.js?v=4" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css?v=5">
+    <script src="assets/js/main.js?v=5" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -29,10 +34,18 @@
           <div class="language-switcher" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="zh" aria-pressed="false">中</button></div>
         </nav>
         <div class="site-controls">
-          <button class="site-control" type="button" data-sakura aria-label="Scatter cherry blossom petals" title="Scatter cherry blossom petals">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1-1.1 2.7-.7 3.4.6.6 1.2.3 2.8-.1 3.8 1-.7 2.6-1.3 3.8-.9 1.5.4 2.2 1.9 1.4 3.2 1.3.6 1.5 2.3.5 3.4-.9 1-2.5 1.2-3.7 1.2 1 .8 2 2.1 2 3.4 0 1.6-1.3 2.7-2.8 2.4-.2 1.5-1.7 2.1-3 1.4-1.2-.6-1.9-2.1-2.1-3.2-.4 1.1-1.2 2.6-2.4 3-1.4.5-2.8-.3-2.8-1.8-1.5.1-2.6-1.2-2.4-2.7.2-1.3 1.4-2.4 2.4-3-1.2-.1-2.8-.5-3.6-1.5-.9-1.2-.4-2.8 1-3.3-.6-1.4.3-2.8 1.8-3 1.3-.2 2.7.6 3.6 1.4-.3-1.1-.4-2.8.3-3.8.8-1.3 2.5-1.5 3.7-.6Z"/><circle cx="12" cy="12" r="1.3"/></svg>
-          </button>
-          <button class="site-control" type="button" data-theme-toggle aria-label="Dark mode" aria-pressed="false" title="Dark mode">
+          <details class="season-picker" data-season-picker>
+            <summary class="site-control" data-season-trigger aria-label="Season" title="Season"><span class="season-symbol" aria-hidden="true"></span></summary>
+            <div class="season-options">
+              <button type="button" data-season-choice="auto" data-i18n="seasonAuto" aria-pressed="true">By month</button>
+              <button type="button" data-season-choice="spring" data-i18n="seasonSpring" aria-pressed="false">Spring · Cherry blossom</button>
+              <button type="button" data-season-choice="summer" data-i18n="seasonSummer" aria-pressed="false">Summer · Green leaves</button>
+              <button type="button" data-season-choice="autumn" data-i18n="seasonAutumn" aria-pressed="false">Autumn · Maple</button>
+              <button type="button" data-season-choice="winter" data-i18n="seasonWinter" aria-pressed="false">Winter · Snow</button>
+              <button type="button" class="season-replay" data-season-replay data-i18n="seasonReplay">Replay animation</button>
+            </div>
+          </details>
+          <button class="site-control" type="button" data-theme-toggle aria-label="Dark mode" aria-pressed="true" title="Dark mode">
             <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 13a9 9 0 0 1-10-10 9 9 0 1 0 10 10Z"/></svg>
             <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg>
           </button>
@@ -50,13 +63,12 @@
 
       <section class="shell" aria-label="Photography archive">
         <div class="gallery-tools">
-          <p id="gallery-help" data-i18n="galleryHelp">Swipe or drag to browse. Hold a photo to enlarge it.</p>
           <div class="gallery-arrows">
             <button class="site-control" type="button" data-gallery-previous aria-label="Previous photo" title="Previous photo" aria-controls="photo-strip">←</button>
             <button class="site-control" type="button" data-gallery-next aria-label="Next photo" title="Next photo" aria-controls="photo-strip">→</button>
           </div>
         </div>
-        <div class="photo-strip" id="photo-strip" data-photo-strip aria-describedby="gallery-help">
+        <div class="photo-strip" id="photo-strip" data-photo-strip>
           <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-06.jpg">
             <img src="assets/gallery/gallery-06.jpg" width="1707" height="1280" alt="Coastal town beneath a blue sky" loading="eager" decoding="async">
           </button>

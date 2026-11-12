@@ -4,17 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Publications, working papers, work in progress, and conference contributions by Jiayi Weng.">
-    <meta name="theme-color" content="#faf4e8">
+    <meta name="theme-color" content="#161d29">
     <title>Research · Jiayi Weng</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <script>
+      const seasons = ["winter", "spring", "summer", "autumn"];
+      const calendarSeason = () => seasons[Math.floor((new Date().getMonth() + 1) / 3) % 4];
+      document.documentElement.dataset.season = calendarSeason();
       try {
         const theme = localStorage.getItem("jiayi-theme");
         if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+        const season = localStorage.getItem("jiayi-season");
+        if (seasons.includes(season)) document.documentElement.dataset.season = season;
       } catch {}
     </script>
-    <link rel="stylesheet" href="assets/css/styles.css?v=4">
-    <script src="assets/js/main.js?v=4" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css?v=5">
+    <script src="assets/js/main.js?v=5" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -29,10 +34,18 @@
           <div class="language-switcher" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="zh" aria-pressed="false">中</button></div>
         </nav>
         <div class="site-controls">
-          <button class="site-control" type="button" data-sakura aria-label="Scatter cherry blossom petals" title="Scatter cherry blossom petals">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c1-1.1 2.7-.7 3.4.6.6 1.2.3 2.8-.1 3.8 1-.7 2.6-1.3 3.8-.9 1.5.4 2.2 1.9 1.4 3.2 1.3.6 1.5 2.3.5 3.4-.9 1-2.5 1.2-3.7 1.2 1 .8 2 2.1 2 3.4 0 1.6-1.3 2.7-2.8 2.4-.2 1.5-1.7 2.1-3 1.4-1.2-.6-1.9-2.1-2.1-3.2-.4 1.1-1.2 2.6-2.4 3-1.4.5-2.8-.3-2.8-1.8-1.5.1-2.6-1.2-2.4-2.7.2-1.3 1.4-2.4 2.4-3-1.2-.1-2.8-.5-3.6-1.5-.9-1.2-.4-2.8 1-3.3-.6-1.4.3-2.8 1.8-3 1.3-.2 2.7.6 3.6 1.4-.3-1.1-.4-2.8.3-3.8.8-1.3 2.5-1.5 3.7-.6Z"/><circle cx="12" cy="12" r="1.3"/></svg>
-          </button>
-          <button class="site-control" type="button" data-theme-toggle aria-label="Dark mode" aria-pressed="false" title="Dark mode">
+          <details class="season-picker" data-season-picker>
+            <summary class="site-control" data-season-trigger aria-label="Season" title="Season"><span class="season-symbol" aria-hidden="true"></span></summary>
+            <div class="season-options">
+              <button type="button" data-season-choice="auto" data-i18n="seasonAuto" aria-pressed="true">By month</button>
+              <button type="button" data-season-choice="spring" data-i18n="seasonSpring" aria-pressed="false">Spring · Cherry blossom</button>
+              <button type="button" data-season-choice="summer" data-i18n="seasonSummer" aria-pressed="false">Summer · Green leaves</button>
+              <button type="button" data-season-choice="autumn" data-i18n="seasonAutumn" aria-pressed="false">Autumn · Maple</button>
+              <button type="button" data-season-choice="winter" data-i18n="seasonWinter" aria-pressed="false">Winter · Snow</button>
+              <button type="button" class="season-replay" data-season-replay data-i18n="seasonReplay">Replay animation</button>
+            </div>
+          </details>
+          <button class="site-control" type="button" data-theme-toggle aria-label="Dark mode" aria-pressed="true" title="Dark mode">
             <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 13a9 9 0 0 1-10-10 9 9 0 1 0 10 10Z"/></svg>
             <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg>
           </button>
@@ -52,6 +65,7 @@
         <section class="category" id="publications" aria-labelledby="publications-title">
           <header class="category-header reveal">
             <div><h2 id="publications-title" data-i18n="publications">Publications</h2><p data-i18n="publicationsDesc">Peer-reviewed journal articles with a final publication record.</p></div>
+            <p class="jcr-note" data-i18n="jcrNote">Journal quartiles use the 2025 JIF data released in 2026. Open a badge for its source.</p>
           </header>
           <div class="paper-list reveal">
             <article class="paper">
@@ -59,7 +73,7 @@
               <div>
                 <h3>Assessing community resilience during the first COVID-19 wave peak in a megacity in eastern China: a cross-sectional study using social media data</h3>
                 <p class="paper-authors">Lanyue Zhang, Shouchuang Zhang, Yuehui Wei, Danijela Gasevic, Stella Talic, Jiayi Weng, et al.</p>
-                <p class="paper-venue">BMJ Open 16(5), e104115</p>
+                <p class="paper-venue">BMJ Open 16(5), e104115 <a class="jcr-badge" data-quartile="2" href="https://bmjopen.bmj.com/pages/about" title="2025 JIF · Medicine, General &amp; Internal" target="_blank" rel="noreferrer">JCR Q2</a></p>
                 <div class="paper-tags"><span class="tag">Journal article</span></div>
               </div>
               <a class="paper-link" href="https://scholar.google.com/citations?user=XBC92dYAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Scholar ↗</a>
@@ -69,7 +83,7 @@
               <div>
                 <h3>The similarities and differences of multiple chronic diseases risk factors across depressive symptoms trajectories among middle-aged and older Chinese adults: A 10-year longitudinal cohort study</h3>
                 <p class="paper-authors">Shouchuang Zhang, Lanyue Zhang, Siqi Liu, Jiayi Weng, Weiyan Jian, Jing Guo</p>
-                <p class="paper-venue">Journal of Affective Disorders, 120395</p>
+                <p class="paper-venue">Journal of Affective Disorders, 120395 <a class="jcr-badge" data-quartile="1" href="https://www.niic.nsc.ru/phocadownload/publications/2025/JCR_JournalImpactFactor_2026.pdf" title="2025 JIF · Psychiatry" target="_blank" rel="noreferrer">JCR Q1</a></p>
                 <div class="paper-tags"><span class="tag">Journal article</span><span class="tag">DOI verified</span></div>
               </div>
               <a class="paper-link" href="https://doi.org/10.1016/j.jad.2025.120395" target="_blank" rel="noreferrer">DOI ↗</a>
@@ -79,7 +93,7 @@
               <div>
                 <h3>Evaluating community resilience through social media during China’s first post-COVID-19 reopening: insights from machine learning</h3>
                 <p class="paper-authors">Shouchuang Zhang, Lanyue Zhang, Jiayi Weng, Danijela Gasevic, Yuehui Wei, Zefeng Chen, Jun Zhang, Larry Z. Liu, Weiyan Jian</p>
-                <p class="paper-venue">Journal of Global Health 15, 04315</p>
+                <p class="paper-venue">Journal of Global Health 15, 04315 <a class="jcr-badge" data-quartile="1" href="https://www.niic.nsc.ru/phocadownload/publications/2025/JCR_JournalImpactFactor_2026.pdf" title="2025 JIF · Public, Environmental &amp; Occupational Health" target="_blank" rel="noreferrer">JCR Q1</a></p>
                 <div class="paper-tags"><span class="tag">Journal article</span><span class="tag">DOI verified</span></div>
               </div>
               <a class="paper-link" href="https://doi.org/10.7189/jogh.15.04315" target="_blank" rel="noreferrer">DOI ↗</a>
@@ -89,8 +103,8 @@
               <div>
                 <h3>Technological effect diversification and green innovation: the moderating roles of environmental regulation and market competition</h3>
                 <p class="paper-authors">Wei Wei, Rui Wang, Jiayi Weng, Siqi Liu</p>
-                <p class="paper-venue">Technology Analysis &amp; Strategic Management, 1–16</p>
-                <div class="paper-tags"><span class="tag">Journal article</span><span class="tag">JCR Q3</span></div>
+                <p class="paper-venue">Technology Analysis &amp; Strategic Management, 1–16 <a class="jcr-badge" data-quartile="3" href="https://urv.scimarina.org/es/ipublic/source/10993" title="2025 JIF · Management" target="_blank" rel="noreferrer">JCR Q3</a></p>
+                <div class="paper-tags"><span class="tag">Journal article</span></div>
               </div>
               <a class="paper-link" href="https://doi.org/10.1080/09537325.2025.2550008" target="_blank" rel="noreferrer">DOI ↗</a>
             </article>
@@ -99,8 +113,8 @@
               <div>
                 <h3>Explainable Machine Learning Model for Predicting Persistent Sepsis-Associated Acute Kidney Injury: Development and Validation Study</h3>
                 <p class="paper-authors">Wei Jiang, Yaosheng Zhang, Jiayi Weng, et al.</p>
-                <p class="paper-venue">Journal of Medical Internet Research 27, e62932</p>
-                <div class="paper-tags"><span class="tag">Journal article</span><span class="tag">JCR Q1</span><span class="tag">Co-first author</span></div>
+                <p class="paper-venue">Journal of Medical Internet Research 27, e62932 <a class="jcr-badge" data-quartile="1" href="https://www.jmir.org/announcements/696" title="2025 JIF · Health Care Sciences &amp; Services" target="_blank" rel="noreferrer">JCR Q1</a></p>
+                <div class="paper-tags"><span class="tag">Journal article</span><span class="tag">Co-first author</span></div>
               </div>
               <a class="paper-link" href="https://doi.org/10.2196/62932" target="_blank" rel="noreferrer">DOI ↗</a>
             </article>
@@ -109,8 +123,8 @@
               <div>
                 <h3>A New Evaluation Model for Traumatic Severe Pneumothorax Based on Interpretable Machine Learning</h3>
                 <p class="paper-authors">Y. Lv, Jiayi Weng, J. Li, W. Chen, H. Huang, Y. Zhao</p>
-                <p class="paper-venue">International Journal of Computers, Communications &amp; Control 20</p>
-                <div class="paper-tags"><span class="tag">Journal article</span><span class="tag">JCR Q3</span><span class="tag">Co-first author</span></div>
+                <p class="paper-venue">International Journal of Computers, Communications &amp; Control 20 <a class="jcr-badge" data-quartile="3" href="https://univagora.ro/jour/index.php/index" title="2025 JIF · Automation &amp; Control Systems" target="_blank" rel="noreferrer">JCR Q3</a></p>
+                <div class="paper-tags"><span class="tag">Journal article</span><span class="tag">Co-first author</span></div>
               </div>
               <a class="paper-link" href="https://scholar.google.com/citations?user=XBC92dYAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Scholar ↗</a>
             </article>

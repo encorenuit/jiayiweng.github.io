@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A personal photography archive by Jiayi Weng.">
     <meta name="theme-color" content="#161d29">
-    <title>Gallery · Jiayi Weng</title>
+    <title data-i18n="galleryPageTitle">Gallery · Jiayi Weng</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <script>
       const seasons = ["winter", "spring", "summer", "autumn"];
@@ -19,10 +19,10 @@
       } catch {}
     </script>
     <link rel="stylesheet" href="assets/css/styles.css?v=6">
-    <script src="assets/js/main.js?v=6" defer></script>
+    <script src="assets/js/main.js?v=7" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-i18n="skipToContent">Skip to content</a>
     <header class="site-header">
       <div class="nav-shell">
         <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation"><span></span><span></span></button>
@@ -57,7 +57,7 @@
       <section class="shell page-intro">
         <div class="gallery-intro reveal">
           <h1 data-i18n="galleryTitle">Gallery</h1>
-          <p class="intro-copy" data-i18n="galleryIntro">I like taking my camera along when I travel. I stop for cherry blossoms over a street, a shop lighting up at dusk, or a table by the sea. K-pop belongs here too, from an IVE display to the small discoveries that make a trip feel personal.</p>
+          <p class="intro-copy" data-i18n="galleryInterests">K-pop · Travel · Formula 1</p>
           <p class="intro-copy gallery-reflection" data-i18n="galleryReflection">I think of these photographs through mono no aware, the feeling that an ordinary moment can be moving because it will pass.</p>
           <figure class="gallery-quote">
             <blockquote cite="https://jti.lib.virginia.edu/japanese/texts/AnoHeik/vol1.html"><p data-i18n="galleryQuote">“The bells of the Gion monastery echo the impermanence of all things.”</p></blockquote>
@@ -130,7 +130,7 @@
     <footer class="site-footer">
       <div class="shell footer-grid">
         <div><h2 data-i18n="footerTitle">Contact</h2><p>© <span data-year></span> Jiayi Weng</p></div>
-        <nav class="footer-links" aria-label="Footer links"><a href="mailto:KayiWeng@stu.xjtu.edu.cn">KayiWeng@stu.xjtu.edu.cn</a><a href="research.html">Research</a><a href="index.html">Home</a></nav>
+        <nav class="footer-links" aria-label="Footer links"><a href="mailto:KayiWeng@stu.xjtu.edu.cn">KayiWeng@stu.xjtu.edu.cn</a><a href="research.html" data-i18n="navResearch">Research</a><a href="index.html" data-i18n="navHome">Home</a></nav>
       </div>
     </footer>
   </body>

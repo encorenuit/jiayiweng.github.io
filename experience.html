@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Education, professional experience, honours, and capabilities of Jiayi Weng.">
     <meta name="theme-color" content="#161d29">
-    <title>Experience · Jiayi Weng</title>
+    <title data-i18n="experiencePageTitle">Experience · Jiayi Weng</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <script>
       const seasons = ["winter", "spring", "summer", "autumn"];
@@ -19,10 +19,10 @@
       } catch {}
     </script>
     <link rel="stylesheet" href="assets/css/styles.css?v=6">
-    <script src="assets/js/main.js?v=6" defer></script>
+    <script src="assets/js/main.js?v=7" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-i18n="skipToContent">Skip to content</a>
     <header class="site-header">
       <div class="nav-shell">
         <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation"><span></span><span></span></button>
@@ -74,9 +74,9 @@
           </header>
           <div class="timeline reveal">
             <article class="timeline-item">
-              <div class="timeline-time">2025.09 — 2028.06<br>XI’AN · CN</div>
+              <div class="timeline-time">2025.09 — 2028.06<br><span data-i18n="xianLocation">XI’AN · CN</span></div>
               <div class="timeline-body">
-                <h3>Xi’an Jiaotong University</h3>
+                <h3 data-i18n="xjtuName">Xi’an Jiaotong University</h3>
                 <p class="timeline-role" data-i18n="xjtuDegree">MSc in Applied Statistics</p>
                 <ul class="education-points">
                   <li data-i18n="xjtuMethods">Statistical learning and information theory</li>
@@ -86,9 +86,9 @@
               </div>
             </article>
             <article class="timeline-item">
-              <div class="timeline-time">2021.09 — 2025.06<br>BEIJING · CN</div>
+              <div class="timeline-time">2021.09 — 2025.06<br><span data-i18n="beijingLocation">BEIJING · CN</span></div>
               <div class="timeline-body">
-                <h3>Beijing Jiaotong University</h3>
+                <h3 data-i18n="bjtuName">Beijing Jiaotong University</h3>
                 <p class="timeline-role" data-i18n="bjtuDegree">BSc in Management Information Systems</p>
                 <ul class="education-points">
                   <li data-i18n="bjtuRank">Major rank: 1/109</li>
@@ -108,15 +108,15 @@
           </header>
           <div class="timeline reveal">
             <article class="timeline-item">
-              <div class="timeline-time">2026 — PRESENT<br>SHENZHEN · CN</div>
+              <div class="timeline-time">2026 — <span data-i18n="present">PRESENT</span><br><span data-i18n="shenzhenLocation">SHENZHEN · CN</span></div>
               <div class="timeline-body">
-                <h3 class="employer"><span class="employer-logo"><img src="assets/phasurge-logo.png" width="260" height="127" alt=""></span><a class="company-link" href="https://www.phasurge.com/en/" data-href-zh="https://www.phasurge.com/zh-CN/" target="_blank" rel="noreferrer"><span data-i18n="phasurgeName">Phasurge Tech Co., Ltd.</span> <span aria-hidden="true">↗</span></a></h3>
+                <h3 class="employer"><span class="employer-logo"><img src="assets/phasurge-logo.png" width="260" height="127" alt=""></span><a class="company-link" href="https://www.phasurge.com/en/" data-href-zh="https://www.phasurge.com/zh-CN/" target="_blank" rel="noreferrer" data-i18n="phasurgeName">Phasurge Tech Co., Ltd.</a></h3>
                 <p class="timeline-role" data-i18n="cooRole">Chief Operating Officer</p>
                 <p class="work-summary" data-i18n="cooBody">Business operations, financial management, supply chain management, and customer development. Responsibilities also include commercial analysis, industry research, and cross-functional coordination.</p>
               </div>
             </article>
             <article class="timeline-item">
-              <div class="timeline-time">2024.12 — 2025.01<br>SHENZHEN · CN</div>
+              <div class="timeline-time">2024.12 — 2025.01<br><span data-i18n="shenzhenLocation">SHENZHEN · CN</span></div>
               <div class="timeline-body">
                 <h3 class="employer"><span class="employer-logo huatai-logo"><img src="assets/huatai-logo.png" width="191" height="99" alt=""></span><span data-i18n="huataiName">Huatai Securities</span></h3>
                 <p class="timeline-role" data-i18n="huataiRole">Management Trainee and Industry Research Intern</p>
@@ -124,9 +124,9 @@
               </div>
             </article>
             <article class="timeline-item">
-              <div class="timeline-time">2024.06 — 2024.08<br>BEIJING · CN</div>
+              <div class="timeline-time">2024.06 — 2024.08<br><span data-i18n="beijingLocation">BEIJING · CN</span></div>
               <div class="timeline-body">
-                <h3>Beijing Nightsheep Technology Co., Ltd.</h3>
+                <h3 data-i18n="nightsheepName">Beijing Nightsheep Technology Co., Ltd.</h3>
                 <p class="timeline-role" data-i18n="pmRole">AI Product Manager</p>
                 <p data-i18n="pmBody">Designed AIGC-assisted science experiment workflows, translated teaching needs into product requirements, and collaborated on RAG and multimodal model evaluation.</p>
               </div>
@@ -141,8 +141,8 @@
             <div><h2 id="honours-title" data-i18n="honours">Honours</h2><p data-i18n="honoursDesc">Selected academic honours.</p></div>
           </header>
           <div class="award-grid reveal">
-            <article class="award"><span>2025 · ACADEMIC</span><h3 data-i18n="awardNational">National Scholarship</h3><p data-i18n="awardNationalBody">National-level academic recognition awarded in 2025.</p></article>
-            <article class="award"><span>2025 · GRADUATION</span><h3 data-i18n="awardGraduate">Beijing Outstanding Graduate</h3><p data-i18n="awardGraduateBody">Recognized at graduation from Beijing Jiaotong University.</p></article>
+            <article class="award"><span>2025 · <span data-i18n="academicAwardType">ACADEMIC</span></span><h3 data-i18n="awardNational">National Scholarship</h3><p data-i18n="awardNationalBody">National-level academic recognition awarded in 2025.</p></article>
+            <article class="award"><span>2025 · <span data-i18n="graduationAwardType">GRADUATION</span></span><h3 data-i18n="awardGraduate">Beijing Outstanding Graduate</h3><p data-i18n="awardGraduateBody">Recognized at graduation from Beijing Jiaotong University.</p></article>
           </div>
         </div>
       </section>

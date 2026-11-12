@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light dark;
+  color-scheme: dark;
   --ink: light-dark(#28231e, #f4e9db);
   --ink-soft: light-dark(#5d5148, #c9bcaf);
   --paper: light-dark(#faf4e8, #161d29);
@@ -7,10 +7,10 @@
   --paper-warm: light-dark(#f0e5d4, #1c2634);
   --line: light-dark(#d9cbbb, #414856);
   --line-strong: light-dark(#b9a695, #596171);
-  --accent: light-dark(#9f433c, #f2a5a9);
+  --accent: light-dark(#813d28, #f0b388);
   --accent-on: light-dark(#fffaf0, #22191f);
-  --sakura: light-dark(#be6573, #e7a1ae);
-  --horizon: light-dark(#f0d9c0, #293951);
+  --sakura: light-dark(#a96343, #ca895d);
+  --horizon: light-dark(#ecd4b9, #423128);
   --sage: light-dark(#465d51, #afc7ba);
   --shadow: 0 20px 54px light-dark(#56432b24, #090e1780);
   --shadow-soft: 0 10px 32px light-dark(#56432b14, #090e1760);
@@ -28,6 +28,42 @@ html[data-theme="light"] {
 
 html[data-theme="dark"] {
   color-scheme: dark;
+}
+
+html[data-season="spring"] {
+  --accent: light-dark(#665b4e, #ddd0b6);
+  --sakura: light-dark(#a4977f, #cbbda2);
+  --horizon: light-dark(#eddfc6, #30384a);
+  --particle-light: #f8e6c4;
+  --season-branch: var(--blossom-branch);
+  --particle-shape: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%204c-5-6-13%200-10%206%202%206%208%2011%2010%2013%202-2%208-7%2010-13%203-6-5-12-10-6Z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+html[data-season="summer"] {
+  --accent: light-dark(#3a6453, #a5c8a9);
+  --sakura: light-dark(#658b69, #a0b99a);
+  --horizon: light-dark(#dce9d2, #253b3a);
+  --particle-light: #cbe0a5;
+  --season-branch: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20330%20214%22%3E%3Cpath%20d%3D%22M327%2010C273%2032%20233%2053%20188%2093s-89%2069-161%2089m254-154c-12%2019-15%2045-9%2072m-39-46c-12%2020-11%2049-17%2078s-18%2043-35%2054m16-101c-29-2-50-17-78-30S86%2042%2056%2045m67%20101c-14%208-23%2022-29%2042m71-82c-22%207-43%206-62%203%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222.3%22%20stroke-linecap%3D%22round%22%2F%3E%3Cg%20transform%3D%22translate(265%2051)%20rotate(24)%20scale(2.3)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22M22%202C13%203%203%204%203%2015c0%202%201%204%202%205l-3%203%201%201%204-4C17%2024%2024%2013%2022%202ZM7%2018%2017%208l-8%2011Z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(227%2075)%20rotate(-62)%20scale(2.5)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22M22%202C13%203%203%204%203%2015c0%202%201%204%202%205l-3%203%201%201%204-4C17%2024%2024%2013%2022%202ZM7%2018%2017%208l-8%2011Z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(198%20106)%20rotate(91)%20scale(2.6)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22M22%202C13%203%203%204%203%2015c0%202%201%204%202%205l-3%203%201%201%204-4C17%2024%2024%2013%2022%202ZM7%2018%2017%208l-8%2011Z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(148%20131)%20rotate(-71)%20scale(2.2)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22M22%202C13%203%203%204%203%2015c0%202%201%204%202%205l-3%203%201%201%204-4C17%2024%2024%2013%2022%202ZM7%2018%2017%208l-8%2011Z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(116%20153)%20rotate(89)%20scale(2.1)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22M22%202C13%203%203%204%203%2015c0%202%201%204%202%205l-3%203%201%201%204-4C17%2024%2024%2013%2022%202ZM7%2018%2017%208l-8%2011Z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(89%20166)%20rotate(-88)%20scale(2)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22M22%202C13%203%203%204%203%2015c0%202%201%204%202%205l-3%203%201%201%204-4C17%2024%2024%2013%2022%202ZM7%2018%2017%208l-8%2011Z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(82%2076)%20rotate(43)%20scale(1.85)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22M22%202C13%203%203%204%203%2015c0%202%201%204%202%205l-3%203%201%201%204-4C17%2024%2024%2013%2022%202ZM7%2018%2017%208l-8%2011Z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(120%2082)%20rotate(-25)%20scale(1.65)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22M22%202C13%203%203%204%203%2015c0%202%201%204%202%205l-3%203%201%201%204-4C17%2024%2024%2013%2022%202ZM7%2018%2017%208l-8%2011Z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(217%20159)%20rotate(18)%20scale(1.8)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22M22%202C13%203%203%204%203%2015c0%202%201%204%202%205l-3%203%201%201%204-4C17%2024%2024%2013%2022%202ZM7%2018%2017%208l-8%2011Z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(288%2098)%20rotate(88)%20scale(1.7)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22M22%202C13%203%203%204%203%2015c0%202%201%204%202%205l-3%203%201%201%204-4C17%2024%2024%2013%2022%202ZM7%2018%2017%208l-8%2011Z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  --particle-shape: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M22%202C13%203%203%204%203%2015c0%202%201%204%202%205l-3%203%201%201%204-4C17%2024%2024%2013%2022%202ZM7%2018%2017%208l-8%2011Z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E");
+}
+
+html[data-season="autumn"] {
+  --accent: light-dark(#813d28, #f0b388);
+  --sakura: light-dark(#a96343, #ca895d);
+  --horizon: light-dark(#ecd4b9, #423128);
+  --particle-light: #ffe0a9;
+  --season-branch: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20330%20214%22%3E%3Cpath%20d%3D%22M327%2010C273%2032%20233%2053%20188%2093s-89%2069-161%2089m254-154c-12%2019-15%2045-9%2072m-39-46c-12%2020-11%2049-17%2078s-18%2043-35%2054m16-101c-29-2-50-17-78-30S86%2042%2056%2045m67%20101c-14%208-23%2022-29%2042m71-82c-22%207-43%206-62%203%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222.3%22%20stroke-linecap%3D%22round%22%2F%3E%3Cg%20transform%3D%22translate(269%2057)%20rotate(33)%20scale(2.1)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22m12%200%202.3%206.5%203-1.8-1%205.8%205-2.1-.7%203%203.4.5-2.6%202.1%201.2%201.3-8.6%202.1.8%203.2-2.1-.5v3.8h-1.4v-3.8l-2.2.5.8-3.2-8.6-2.1%201.2-1.3L0%2011.9l3.4-.5-.7-3%205%202.1-1-5.8%203%201.8Z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(224%2083)%20rotate(-15)%20scale(2.8)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22m12%200%202.3%206.5%203-1.8-1%205.8%205-2.1-.7%203%203.4.5-2.6%202.1%201.2%201.3-8.6%202.1.8%203.2-2.1-.5v3.8h-1.4v-3.8l-2.2.5.8-3.2-8.6-2.1%201.2-1.3L0%2011.9l3.4-.5-.7-3%205%202.1-1-5.8%203%201.8Z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(179%20105)%20rotate(18)%20scale(2.6)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22m12%200%202.3%206.5%203-1.8-1%205.8%205-2.1-.7%203%203.4.5-2.6%202.1%201.2%201.3-8.6%202.1.8%203.2-2.1-.5v3.8h-1.4v-3.8l-2.2.5.8-3.2-8.6-2.1%201.2-1.3L0%2011.9l3.4-.5-.7-3%205%202.1-1-5.8%203%201.8Z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(122%20146)%20rotate(26)%20scale(2.2)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22m12%200%202.3%206.5%203-1.8-1%205.8%205-2.1-.7%203%203.4.5-2.6%202.1%201.2%201.3-8.6%202.1.8%203.2-2.1-.5v3.8h-1.4v-3.8l-2.2.5.8-3.2-8.6-2.1%201.2-1.3L0%2011.9l3.4-.5-.7-3%205%202.1-1-5.8%203%201.8Z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(75%20166)%20rotate(-22)%20scale(2.1)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22m12%200%202.3%206.5%203-1.8-1%205.8%205-2.1-.7%203%203.4.5-2.6%202.1%201.2%201.3-8.6%202.1.8%203.2-2.1-.5v3.8h-1.4v-3.8l-2.2.5.8-3.2-8.6-2.1%201.2-1.3L0%2011.9l3.4-.5-.7-3%205%202.1-1-5.8%203%201.8Z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(101%2063)%20rotate(-34)%20scale(1.85)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22m12%200%202.3%206.5%203-1.8-1%205.8%205-2.1-.7%203%203.4.5-2.6%202.1%201.2%201.3-8.6%202.1.8%203.2-2.1-.5v3.8h-1.4v-3.8l-2.2.5.8-3.2-8.6-2.1%201.2-1.3L0%2011.9l3.4-.5-.7-3%205%202.1-1-5.8%203%201.8Z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(222%20158)%20rotate(54)%20scale(1.8)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22m12%200%202.3%206.5%203-1.8-1%205.8%205-2.1-.7%203%203.4.5-2.6%202.1%201.2%201.3-8.6%202.1.8%203.2-2.1-.5v3.8h-1.4v-3.8l-2.2.5.8-3.2-8.6-2.1%201.2-1.3L0%2011.9l3.4-.5-.7-3%205%202.1-1-5.8%203%201.8Z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(297%2089)%20rotate(35)%20scale(1.38)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22m12%200%202.3%206.5%203-1.8-1%205.8%205-2.1-.7%203%203.4.5-2.6%202.1%201.2%201.3-8.6%202.1.8%203.2-2.1-.5v3.8h-1.4v-3.8l-2.2.5.8-3.2-8.6-2.1%201.2-1.3L0%2011.9l3.4-.5-.7-3%205%202.1-1-5.8%203%201.8Z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(153%20184)%20rotate(-11)%20scale(1.2)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22m12%200%202.3%206.5%203-1.8-1%205.8%205-2.1-.7%203%203.4.5-2.6%202.1%201.2%201.3-8.6%202.1.8%203.2-2.1-.5v3.8h-1.4v-3.8l-2.2.5.8-3.2-8.6-2.1%201.2-1.3L0%2011.9l3.4-.5-.7-3%205%202.1-1-5.8%203%201.8Z%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(58%20116)%20rotate(37)%20scale(0.94)%20translate(-12%20-12)%22%3E%3Cpath%20d%3D%22m12%200%202.3%206.5%203-1.8-1%205.8%205-2.1-.7%203%203.4.5-2.6%202.1%201.2%201.3-8.6%202.1.8%203.2-2.1-.5v3.8h-1.4v-3.8l-2.2.5.8-3.2-8.6-2.1%201.2-1.3L0%2011.9l3.4-.5-.7-3%205%202.1-1-5.8%203%201.8Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  --particle-shape: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22m12%200%202.3%206.5%203-1.8-1%205.8%205-2.1-.7%203%203.4.5-2.6%202.1%201.2%201.3-8.6%202.1.8%203.2-2.1-.5v3.8h-1.4v-3.8l-2.2.5.8-3.2-8.6-2.1%201.2-1.3L0%2011.9l3.4-.5-.7-3%205%202.1-1-5.8%203%201.8Z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+html[data-season="winter"] {
+  --accent: light-dark(#3e5870, #b9d6eb);
+  --sakura: light-dark(#708aa3, #adc8dd);
+  --horizon: light-dark(#dde9ef, #293951);
+  --particle-light: #f3fcff;
+  --season-branch: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20330%20214%22%3E%3Cpath%20d%3D%22M327%2010C273%2032%20233%2053%20188%2093s-89%2069-161%2089m254-154c-12%2019-15%2045-9%2072m-39-46c-12%2020-11%2049-17%2078s-18%2043-35%2054m16-101c-29-2-50-17-78-30S86%2042%2056%2045m67%20101c-14%208-23%2022-29%2042m71-82c-22%207-43%206-62%203%22%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%222.3%22%20stroke-linecap%3D%22round%22%2F%3E%3Cg%20transform%3D%22translate(279%2059)%20rotate(18)%20scale(1.55)%20translate(-12%20-12)%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M12%201v22m-9.5-16.5%2019%2011m-19%200%2019-11M9%203.2l3%203%203-3M9%2020.8l3-3%203%203M3%209.7l4.1-1.1L6%204.5m15%209.8-4.1%201.1%201.1%204.1M3%2014.3l4.1%201.1L6%2019.5m15-9.8-4.1-1.1L18%204.5%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(242%2092)%20rotate(1)%20scale(1.75)%20translate(-12%20-12)%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M12%201v22m-9.5-16.5%2019%2011m-19%200%2019-11M9%203.2l3%203%203-3M9%2020.8l3-3%203%203M3%209.7l4.1-1.1L6%204.5m15%209.8-4.1%201.1%201.1%204.1M3%2014.3l4.1%201.1L6%2019.5m15-9.8-4.1-1.1L18%204.5%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(175%20103)%20rotate(13)%20scale(2.05)%20translate(-12%20-12)%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M12%201v22m-9.5-16.5%2019%2011m-19%200%2019-11M9%203.2l3%203%203-3M9%2020.8l3-3%203%203M3%209.7l4.1-1.1L6%204.5m15%209.8-4.1%201.1%201.1%204.1M3%2014.3l4.1%201.1L6%2019.5m15-9.8-4.1-1.1L18%204.5%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(116%20156)%20rotate(22)%20scale(1.7)%20translate(-12%20-12)%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M12%201v22m-9.5-16.5%2019%2011m-19%200%2019-11M9%203.2l3%203%203-3M9%2020.8l3-3%203%203M3%209.7l4.1-1.1L6%204.5m15%209.8-4.1%201.1%201.1%204.1M3%2014.3l4.1%201.1L6%2019.5m15-9.8-4.1-1.1L18%204.5%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(76%20168)%20rotate(-10)%20scale(1.15)%20translate(-12%20-12)%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M12%201v22m-9.5-16.5%2019%2011m-19%200%2019-11M9%203.2l3%203%203-3M9%2020.8l3-3%203%203M3%209.7l4.1-1.1L6%204.5m15%209.8-4.1%201.1%201.1%204.1M3%2014.3l4.1%201.1L6%2019.5m15-9.8-4.1-1.1L18%204.5%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(107%2059)%20rotate(20)%20scale(1.4)%20translate(-12%20-12)%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M12%201v22m-9.5-16.5%2019%2011m-19%200%2019-11M9%203.2l3%203%203-3M9%2020.8l3-3%203%203M3%209.7l4.1-1.1L6%204.5m15%209.8-4.1%201.1%201.1%204.1M3%2014.3l4.1%201.1L6%2019.5m15-9.8-4.1-1.1L18%204.5%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(211%20165)%20rotate(7)%20scale(1.45)%20translate(-12%20-12)%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M12%201v22m-9.5-16.5%2019%2011m-19%200%2019-11M9%203.2l3%203%203-3M9%2020.8l3-3%203%203M3%209.7l4.1-1.1L6%204.5m15%209.8-4.1%201.1%201.1%204.1M3%2014.3l4.1%201.1L6%2019.5m15-9.8-4.1-1.1L18%204.5%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(302%20110)%20rotate(16)%20scale(0.9)%20translate(-12%20-12)%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M12%201v22m-9.5-16.5%2019%2011m-19%200%2019-11M9%203.2l3%203%203-3M9%2020.8l3-3%203%203M3%209.7l4.1-1.1L6%204.5m15%209.8-4.1%201.1%201.1%204.1M3%2014.3l4.1%201.1L6%2019.5m15-9.8-4.1-1.1L18%204.5%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(150%20186)%20rotate(22)%20scale(0.9)%20translate(-12%20-12)%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M12%201v22m-9.5-16.5%2019%2011m-19%200%2019-11M9%203.2l3%203%203-3M9%2020.8l3-3%203%203M3%209.7l4.1-1.1L6%204.5m15%209.8-4.1%201.1%201.1%204.1M3%2014.3l4.1%201.1L6%2019.5m15-9.8-4.1-1.1L18%204.5%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate(55%20110)%20rotate(11)%20scale(0.65)%20translate(-12%20-12)%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M12%201v22m-9.5-16.5%2019%2011m-19%200%2019-11M9%203.2l3%203%203-3M9%2020.8l3-3%203%203M3%209.7l4.1-1.1L6%204.5m15%209.8-4.1%201.1%201.1%204.1M3%2014.3l4.1%201.1L6%2019.5m15-9.8-4.1-1.1L18%204.5%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  --particle-shape: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M12%201v22m-9.5-16.5%2019%2011m-19%200%2019-11M9%203.2l3%203%203-3M9%2020.8l3-3%203%203M3%209.7l4.1-1.1L6%204.5m15%209.8-4.1%201.1%201.1%204.1M3%2014.3l4.1%201.1L6%2019.5m15-9.8-4.1-1.1L18%204.5%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
 }
 
 :lang(zh) {
@@ -51,7 +87,7 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--paper);
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.72;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -167,8 +203,63 @@ button {
   stroke-linejoin: round;
 }
 
-[data-sakura] {
+.season-picker {
+  position: relative;
+}
+
+.season-picker summary {
+  list-style: none;
   color: var(--accent);
+}
+
+.season-picker summary::-webkit-details-marker {
+  display: none;
+}
+
+.season-symbol {
+  width: 1.32rem;
+  height: 1.32rem;
+  background: currentColor;
+  mask: var(--particle-shape) center / contain no-repeat;
+}
+
+.season-options {
+  position: absolute;
+  z-index: 2;
+  inset: calc(100% + 0.65rem) 0 auto auto;
+  display: grid;
+  min-width: max-content;
+  padding: 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--paper-strong);
+  box-shadow: var(--shadow);
+}
+
+.season-options button {
+  padding: 0.4rem 0.65rem;
+  border: 0;
+  border-radius: 3px;
+  color: var(--ink);
+  background: transparent;
+  text-align: start;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.season-options button:hover,
+.season-options button[aria-pressed="true"] {
+  color: var(--accent);
+  background: var(--paper-warm);
+}
+
+.season-options .season-replay {
+  margin-top: 0.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.season-options button[hidden] {
+  display: none;
 }
 
 [data-theme-toggle] .icon-sun,
@@ -332,6 +423,13 @@ button {
   line-height: 1.2;
 }
 
+.hero-alias {
+  margin: 0.65rem 0 0;
+  color: var(--ink-soft);
+  font-size: clamp(1.1rem, 2vw, 1.48rem);
+  letter-spacing: 0.04em;
+}
+
 .hero-lead {
   max-width: 620px;
   margin: 2.3rem 0 0;
@@ -461,7 +559,7 @@ button {
   border-radius: 50%;
 }
 
-.sakura-drift {
+.season-drift {
   position: fixed;
   inset: 0;
   z-index: 60;
@@ -469,14 +567,14 @@ button {
   pointer-events: none;
 }
 
-.sakura-petal {
+.season-particle {
   position: absolute;
   top: var(--petal-top);
   left: var(--petal-left);
   width: var(--petal-size);
-  aspect-ratio: 0.82;
-  clip-path: polygon(50% 11%, 68% 0, 88% 8%, 100% 29%, 96% 53%, 76% 79%, 50% 100%, 24% 79%, 4% 53%, 0 29%, 12% 8%, 32% 0);
-  background: linear-gradient(145deg, #ffe2eb, var(--sakura) 72%);
+  aspect-ratio: 1;
+  mask: var(--particle-shape) center / contain no-repeat;
+  background: linear-gradient(145deg, var(--particle-light), var(--sakura) 72%);
   opacity: 0;
   animation: sakura-fall var(--petal-time) ease-out var(--petal-delay) both;
 }
@@ -527,10 +625,12 @@ button {
 .selected-list,
 .paper-list {
   border-top: 1px solid var(--line-strong);
+  counter-reset: paper;
 }
 
 .selected-paper,
 .paper {
+  counter-increment: paper;
   display: grid;
   grid-template-columns: 7.5rem minmax(0, 1fr) auto;
   gap: 2rem;
@@ -553,6 +653,17 @@ button {
   letter-spacing: 0.05em;
 }
 
+.paper-year::before {
+  display: block;
+  margin-bottom: 0.28rem;
+  color: var(--ink-soft);
+  font-size: 1.6rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  line-height: 1;
+  content: counter(paper, decimal-leading-zero);
+}
+
 .paper h3 {
   margin: 0;
   color: var(--ink);
@@ -572,6 +683,37 @@ button {
 .paper-venue {
   color: var(--sage);
   font-weight: 610;
+}
+
+.jcr-badge {
+  display: inline-block;
+  margin-inline-start: 0.45rem;
+  padding: 0.12rem 0.55rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 11%, var(--paper-strong));
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.jcr-badge[data-quartile="1"] {
+  color: var(--accent-on);
+  background: var(--accent);
+}
+
+.jcr-badge:hover {
+  text-decoration: underline;
+}
+
+.category-header .jcr-note {
+  margin: 0.85rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
 }
 
 .paper-tags {
@@ -658,7 +800,7 @@ button {
   width: clamp(210px, 30vw, 400px);
   aspect-ratio: 330 / 214;
   background: var(--sakura);
-  mask: var(--blossom-branch) center / contain no-repeat;
+  mask: var(--season-branch) center / contain no-repeat;
   opacity: 0.54;
   pointer-events: none;
 }
@@ -741,17 +883,42 @@ button {
 
 .timeline-time {
   color: var(--ink-soft);
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   font-weight: 620;
   letter-spacing: 0.03em;
 }
 
 .timeline-body h3 {
   margin: 0;
-  font-size: 1.45rem;
+  font-size: clamp(1.52rem, 2.4vw, 1.92rem);
   font-weight: 650;
   letter-spacing: -0.025em;
   line-height: 1.3;
+}
+
+.employer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.employer-logo {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 4rem;
+  height: 2.5rem;
+  padding: 0.28rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+}
+
+.employer-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .timeline-role {
@@ -786,7 +953,7 @@ button {
 }
 
 .company-link:hover,
-.company-link span {
+.company-link span[aria-hidden="true"] {
   color: var(--accent);
 }
 
@@ -838,22 +1005,107 @@ button {
 .skill-group p {
   margin: 0.65rem 0 0;
   color: var(--ink-soft);
+  font-size: 1.04rem;
+}
+
+.company-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.company-header h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.35rem, 5vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.company-header p {
+  max-width: 44rem;
+  margin: 0.85rem 0 0;
+  color: var(--ink-soft);
+}
+
+.company-header .button {
+  flex-shrink: 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.product-card {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--paper-strong);
+  text-decoration: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.product-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-soft);
+}
+
+.product-figure {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 5 / 4;
+  margin: 0;
+  padding: 1rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: radial-gradient(ellipse at center, #f6f6f2, #dce3e5);
+}
+
+.product-figure img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: contain;
+  transition: transform 360ms ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.035);
+}
+
+.product-copy {
+  padding: 1rem 1.2rem 1.3rem;
+}
+
+.product-category {
+  color: var(--accent);
   font-size: 0.9rem;
+}
+
+.product-copy h3 {
+  margin: 0.1rem 0 0;
+  font-size: 1.62rem;
+}
+
+.product-copy p {
+  margin: 0.25rem 0 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
 }
 
 .gallery-tools {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 0.8rem;
   padding-block: 0.75rem;
   border-top: 1px solid var(--line);
-}
-
-.gallery-tools p {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 0.93rem;
 }
 
 .gallery-arrows button {
@@ -880,13 +1132,15 @@ button {
 }
 
 .gallery-item {
+  position: relative;
   flex: 0 0 auto;
   margin: 0;
   padding: 0.38rem;
   border: 1px solid var(--line);
   border-radius: 3px;
   background: var(--paper-strong);
-  cursor: zoom-in;
+  cursor: grab;
+  overflow: hidden;
   user-select: none;
   -webkit-touch-callout: none;
 }
@@ -900,6 +1154,38 @@ button {
   height: clamp(170px, 31vw, 360px);
   max-width: none;
   pointer-events: none;
+  transition: transform 480ms cubic-bezier(0.2, 0.7, 0.25, 1);
+}
+
+.gallery-item::after {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #181c23c9 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4'/%3E%3C/svg%3E") center / 1.15rem no-repeat;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 200ms ease, transform 200ms ease;
+  pointer-events: none;
+  content: "";
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .photo-strip:not(.is-dragging) .gallery-item:hover img {
+    transform: scale(1.075);
+  }
+
+  .photo-strip:not(.is-dragging) .gallery-item:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gallery-item:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .gallery-preview {
@@ -1060,7 +1346,7 @@ button {
 
 @media (max-width: 680px) {
   body {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .nav-shell,
@@ -1104,8 +1390,28 @@ button {
   .now-grid,
   .award-grid,
   .skill-grid,
-  .footer-grid {
+  .footer-grid,
+  .product-grid {
     grid-template-columns: 1fr;
+  }
+
+  .company-header {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .product-figure {
+    aspect-ratio: 16 / 10;
+  }
+
+  .paper-year {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .paper-year::before {
+    margin-bottom: 0;
   }
 
   .selected-paper,
@@ -1161,11 +1467,11 @@ button {
     transform: none;
   }
 
-  .sakura-drift {
+  .season-drift {
     display: none;
   }
 
-  [data-sakura] {
-    display: none;
+  .gallery-item img {
+    transform: none !important;
   }
 }

@@ -6,7 +6,7 @@ const copy = {
     navGallery: "Gallery",
     menu: "Open navigation",
     homeEyebrow: "Applied statistics · human-centered AI · digital economy",
-    homeLead: "I study how data, intelligent systems, and collective behavior meet — from explainable health models to human–AI interaction and digital markets.",
+    homeLead: "Graduate student at Xi’an Jiaotong University and Chief Operating Officer at Phasurge Tech. I work across academic research, technology products, and organizational practice.",
     exploreResearch: "Explore research",
     viewExperience: "View experience",
     portraitLabel: "Portrait of Jiayi Weng",
@@ -24,14 +24,14 @@ const copy = {
     axisThreeBody: "How interpretable models support credible analysis in health, management, and social research.",
     selectedKicker: "Selected work",
     selectedTitle: "Recent publications",
-    selectedIntro: "A selection across health informatics, computational social science, and technology management.",
+    selectedIntro: "A selection of recent journal and conference work.",
     allResearch: "All research",
     nowKicker: "Now",
     nowTitle: "Learning and building in parallel",
     nowIntro: "My current work spans academic research and the operations of an early-stage technology company.",
     nowStudyStatus: "Graduate study",
-    nowStudyTitle: "MSc in Applied Statistics",
-    nowStudyBody: "School of Mathematics and Statistics, Xi’an Jiaotong University. Research interests include social computing, HCI, FinTech, and explainable AI.",
+    nowStudyTitle: "Graduate studies at Xi’an Jiaotong University",
+    nowStudyBody: "School of Mathematics and Statistics, with an interdisciplinary academic practice spanning research and technology.",
     nowWorkStatus: "Industry",
     nowWorkTitle: "Chief Operating Officer",
     nowWorkBody: "Phasurge Tech Co., Ltd., Shenzhen. I work across operations, commercial analysis, and the translation of technology into deployable products.",
@@ -39,7 +39,7 @@ const copy = {
     footerBody: "Academic conversations, research collaboration, and thoughtful ideas are welcome.",
     researchEyebrow: "Research archive",
     researchTitle: "Research",
-    researchIntro: "Published work, manuscripts under review, early-stage projects, and conference contributions are separated here so each item’s status stays clear.",
+    researchIntro: "Publications, manuscripts under review, ongoing projects, and conference contributions.",
     researchIndexLabel: "Current structure",
     researchIndexValue: "4 distinct research stages",
     publications: "Publications",
@@ -56,7 +56,7 @@ const copy = {
     conferenceRecord: "Conference record",
     experienceEyebrow: "Experience and education",
     experienceTitle: "Experience",
-    experienceIntro: "A path through information systems, applied statistics, research, product work, and technology operations.",
+    experienceIntro: "Education, professional practice, honours, and the methods I use.",
     experienceIndexLabel: "Working principle",
     experienceIndexValue: "Evidence before claims",
     education: "Education",
@@ -64,7 +64,7 @@ const copy = {
     workExperience: "Work experience",
     workExperienceDesc: "Roles that connect analysis, product development, and organizational execution.",
     honours: "Honours",
-    honoursDesc: "Selected academic and competition recognition.",
+    honoursDesc: "Selected academic honours.",
     capabilities: "Capabilities",
     capabilitiesDesc: "Methods and tools used across research and product work.",
     xjtuDegree: "MSc in Applied Statistics",
@@ -95,7 +95,7 @@ const copy = {
     skillResearchBody: "Literature review, empirical design, interpretable modeling, paper writing, cross-disciplinary collaboration.",
     galleryEyebrow: "Personal field notes",
     galleryTitle: "Gallery",
-    galleryIntro: "A slower archive for photographs made outside research — places, light, and ordinary moments worth keeping.",
+    galleryIntro: "Photographs from places I have passed through and moments I wanted to keep.",
     galleryIndexLabel: "Archive status",
     galleryIndexValue: "First series in preparation",
     frameOne: "Urban traces",
@@ -112,7 +112,7 @@ const copy = {
     navGallery: "影像",
     menu: "打开导航",
     homeEyebrow: "应用统计 · 人机交互 · 数字经济",
-    homeLead: "我关注数据、智能系统与群体行为如何相互作用，研究范围从可解释医疗模型延伸至人机交互、数字市场与组织决策。",
+    homeLead: "就读于西安交通大学，同时在跃相智冷担任首席运营官。我的学习与工作横跨学术研究、技术产品与组织实践。",
     exploreResearch: "浏览研究",
     viewExperience: "查看经历",
     portraitLabel: "翁家毅的肖像",
@@ -130,14 +130,14 @@ const copy = {
     axisThreeBody: "可解释模型如何支持医疗、管理与社会研究中的可信分析。",
     selectedKicker: "代表成果",
     selectedTitle: "近期发表",
-    selectedIntro: "选取医疗信息学、计算社会科学与技术管理方向的部分成果。",
+    selectedIntro: "近期发表的部分期刊与会议成果。",
     allResearch: "查看全部研究",
     nowKicker: "近期",
     nowTitle: "学习与实践并行",
     nowIntro: "当前工作横跨学术研究与早期科技公司的运营管理。",
     nowStudyStatus: "研究生学习",
-    nowStudyTitle: "应用统计硕士",
-    nowStudyBody: "就读于西安交通大学数学与统计学院，关注社会计算、人机交互、金融科技与可解释人工智能。",
+    nowStudyTitle: "西安交通大学研究生",
+    nowStudyBody: "就读于数学与统计学院，在研究与技术实践之间开展跨学科学习。",
     nowWorkStatus: "产业实践",
     nowWorkTitle: "首席运营官",
     nowWorkBody: "任职于深圳市跃相智冷科技有限公司，工作涉及运营、商业分析，以及将技术转化为可落地产品。",
@@ -145,7 +145,7 @@ const copy = {
     footerBody: "欢迎就学术问题、研究合作与值得深入的想法来信。",
     researchEyebrow: "研究档案",
     researchTitle: "研究",
-    researchIntro: "这里将正式发表、在审论文、早期项目与会议成果分开呈现，使每项工作的阶段清晰可辨。",
+    researchIntro: "正式发表、在审稿件、进行中项目与会议成果。",
     researchIndexLabel: "当前结构",
     researchIndexValue: "四个研究阶段",
     publications: "正式发表",
@@ -162,15 +162,15 @@ const copy = {
     conferenceRecord: "会议记录",
     experienceEyebrow: "经历与教育",
     experienceTitle: "经历",
-    experienceIntro: "从信息管理、应用统计与科研，延伸到 AI 产品和科技公司运营。",
+    experienceIntro: "教育、工作实践、荣誉，以及我使用的方法与工具。",
     experienceIndexLabel: "工作原则",
     experienceIndexValue: "证据先于结论",
     education: "教育背景",
     educationDesc: "统计学、信息系统、管理与计算方法的系统训练。",
     workExperience: "工作经历",
     workExperienceDesc: "连接分析、产品开发与组织执行的实践角色。",
-    honours: "荣誉与竞赛",
-    honoursDesc: "部分学术荣誉与竞赛成果。",
+    honours: "荣誉",
+    honoursDesc: "部分学术荣誉。",
     capabilities: "方法与工具",
     capabilitiesDesc: "研究和产品工作中使用的方法与工具。",
     xjtuDegree: "应用统计硕士",
@@ -201,7 +201,7 @@ const copy = {
     skillResearchBody: "文献综述、实证设计、可解释建模、论文写作与跨学科协作。",
     galleryEyebrow: "个人观察",
     galleryTitle: "影像",
-    galleryIntro: "一个比研究慢一些的档案，用来保存我拍下的地点、光线与普通时刻。",
+    galleryIntro: "我在路过的地方和想要留下的时刻里拍下的照片。",
     galleryIndexLabel: "档案状态",
     galleryIndexValue: "第一辑准备中",
     frameOne: "城市痕迹",
@@ -218,7 +218,7 @@ const copy = {
     navGallery: "写真",
     menu: "ナビゲーションを開く",
     homeEyebrow: "応用統計 · 人間中心AI · デジタル経済",
-    homeLead: "データ、知的システム、集団行動の接点を研究しています。説明可能な医療モデルから、人間とAIの相互作用、デジタル市場までを対象としています。",
+    homeLead: "西安交通大学の大学院生であり、Phasurge Techの最高執行責任者です。学術研究、テクノロジー製品、組織実務に携わっています。",
     exploreResearch: "研究を見る",
     viewExperience: "経歴を見る",
     portraitLabel: "翁家毅のポートレート",
@@ -236,14 +236,14 @@ const copy = {
     axisThreeBody: "医療、経営、社会研究における信頼できる分析を、解釈可能なモデルで支えます。",
     selectedKicker: "主な成果",
     selectedTitle: "最近の論文",
-    selectedIntro: "医療情報学、計算社会科学、技術経営から選んだ研究成果です。",
+    selectedIntro: "最近の学術誌・学会成果からの抜粋です。",
     allResearch: "研究一覧",
     nowKicker: "現在",
     nowTitle: "学びと実践を並行する",
     nowIntro: "現在は学術研究と、アーリーステージ技術企業の運営に取り組んでいます。",
     nowStudyStatus: "大学院",
-    nowStudyTitle: "応用統計学 修士課程",
-    nowStudyBody: "西安交通大学 数学・統計学院。社会コンピューティング、HCI、FinTech、説明可能AIに関心があります。",
+    nowStudyTitle: "西安交通大学 大学院",
+    nowStudyBody: "数学・統計学院に在籍し、研究と技術実践を横断する学際的な学びに取り組んでいます。",
     nowWorkStatus: "実務",
     nowWorkTitle: "最高執行責任者",
     nowWorkBody: "深圳のPhasurge Techで、事業運営、商業分析、技術の製品化に携わっています。",
@@ -251,7 +251,7 @@ const copy = {
     footerBody: "研究交流、共同研究、深く考える価値のあるアイデアを歓迎します。",
     researchEyebrow: "研究アーカイブ",
     researchTitle: "研究",
-    researchIntro: "出版論文、査読中の原稿、初期プロジェクト、会議成果を分け、各研究の段階を明確に示します。",
+    researchIntro: "出版論文、査読中の原稿、進行中のプロジェクト、学会成果。",
     researchIndexLabel: "構成",
     researchIndexValue: "四つの研究段階",
     publications: "出版論文",
@@ -268,7 +268,7 @@ const copy = {
     conferenceRecord: "会議記録",
     experienceEyebrow: "経歴と教育",
     experienceTitle: "経歴",
-    experienceIntro: "情報システムと応用統計から、研究、AIプロダクト、技術企業の運営へ。",
+    experienceIntro: "学歴、実務経験、受賞、そして使用する手法とツール。",
     experienceIndexLabel: "原則",
     experienceIndexValue: "主張より先に証拠を",
     education: "学歴",
@@ -276,7 +276,7 @@ const copy = {
     workExperience: "職務経歴",
     workExperienceDesc: "分析、プロダクト開発、組織運営をつなぐ実務経験。",
     honours: "受賞",
-    honoursDesc: "主な学術表彰とコンテスト受賞。",
+    honoursDesc: "主な学術表彰。",
     capabilities: "スキル",
     capabilitiesDesc: "研究とプロダクト開発で用いる手法とツール。",
     xjtuDegree: "応用統計学 修士課程",
@@ -307,7 +307,7 @@ const copy = {
     skillResearchBody: "文献調査、実証設計、解釈可能モデリング、論文執筆、学際的協働。",
     galleryEyebrow: "個人のフィールドノート",
     galleryTitle: "写真",
-    galleryIntro: "研究の外で撮った場所、光、日常の瞬間を残す、少しゆっくりしたアーカイブです。",
+    galleryIntro: "通り過ぎた場所と、残しておきたい瞬間の写真です。",
     galleryIndexLabel: "アーカイブ状況",
     galleryIndexValue: "第一シリーズ準備中",
     frameOne: "都市の痕跡",
@@ -386,10 +386,54 @@ function initReveal() {
   elements.forEach((element) => observer.observe(element));
 }
 
+function initLightbox() {
+  const dialog = document.querySelector("[data-lightbox-dialog]");
+  const image = document.querySelector("[data-lightbox-image]");
+  const items = [...document.querySelectorAll("[data-gallery-src]")];
+  if (!dialog || !image || !items.length) return;
+
+  let activeIndex = 0;
+
+  const showImage = (index) => {
+    activeIndex = (index + items.length) % items.length;
+    const itemImage = items[activeIndex].querySelector("img");
+    image.src = items[activeIndex].dataset.gallerySrc;
+    image.alt = itemImage?.alt || "Selected gallery photograph";
+  };
+
+  const openImage = (index) => {
+    showImage(index);
+    dialog.showModal();
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeImage = () => {
+    dialog.close();
+    document.body.style.overflow = "";
+  };
+
+  items.forEach((item, index) => item.addEventListener("click", () => openImage(index)));
+  dialog.querySelector("[data-lightbox-close]")?.addEventListener("click", closeImage);
+  dialog.querySelector("[data-lightbox-previous]")?.addEventListener("click", () => showImage(activeIndex - 1));
+  dialog.querySelector("[data-lightbox-next]")?.addEventListener("click", () => showImage(activeIndex + 1));
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) closeImage();
+  });
+  dialog.addEventListener("close", () => {
+    document.body.style.overflow = "";
+  });
+  document.addEventListener("keydown", (event) => {
+    if (!dialog.open) return;
+    if (event.key === "ArrowLeft") showImage(activeIndex - 1);
+    if (event.key === "ArrowRight") showImage(activeIndex + 1);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initLanguage();
   initMenu();
   initReveal();
+  initLightbox();
   const year = document.querySelector("[data-year]");
   if (year) year.textContent = new Date().getFullYear();
 });

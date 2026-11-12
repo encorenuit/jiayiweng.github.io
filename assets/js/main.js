@@ -34,7 +34,7 @@ const copy = {
     nowStudyBody: "School of Mathematics and Statistics, with an interdisciplinary academic practice spanning research and technology.",
     nowWorkStatus: "Industry",
     nowWorkTitle: "Chief Operating Officer",
-    nowWorkBody: "Phasurge Tech Co., Ltd., Shenzhen. I work across operations, commercial analysis, and the translation of technology into deployable products.",
+    nowWorkBody: "Operations, financial management, supply chain management, and customer development in Shenzhen.",
     footerTitle: "Let’s compare notes.",
     footerBody: "Academic conversations, research collaboration, and thoughtful ideas are welcome.",
     researchEyebrow: "Research archive",
@@ -65,14 +65,17 @@ const copy = {
     workExperienceDesc: "Roles that connect analysis, product development, and organizational execution.",
     honours: "Honours",
     honoursDesc: "Selected academic honours.",
-    capabilities: "Capabilities",
-    capabilitiesDesc: "Methods and tools used across research and product work.",
+    capabilities: "Methods & Tools",
     xjtuDegree: "MSc in Applied Statistics",
-    xjtuBody: "Graduate study in statistical learning, information theory, text and image analysis, deep learning, and generative AI. Research interests: FinTech, social computing, HCI, and digital markets.",
+    xjtuMethods: "Statistical learning and information theory",
+    xjtuComputing: "Text and image analysis, deep learning, and generative AI",
+    xjtuTopics: "FinTech, social computing, human–computer interaction, and digital markets",
     bjtuDegree: "BSc in Management Information Systems",
-    bjtuBody: "Graduated ranked 1/109 with a 91.4/100 average. Coursework included databases, business analytics, supply chain management, finance, accounting, data structures, and applied statistics.",
+    bjtuRank: "Major rank: 1/109",
+    bjtuAverage: "Average grade: 91.4/100",
+    bjtuCoursework: "Coursework: databases, business analytics, supply chain management, finance, accounting, data structures, and applied statistics",
     cooRole: "Chief Operating Officer",
-    cooBody: "Operations, commercial analysis, industry research, and cross-functional execution at a Shenzhen-based liquid-cooling technology company.",
+    cooBody: "Business operations, financial management, supply chain management, and customer development. Responsibilities also include commercial analysis, industry research, and cross-functional coordination.",
     pmRole: "AI Product Manager",
     pmBody: "Designed AIGC-assisted science experiment workflows, translated teaching needs into product requirements, and collaborated on RAG and multimodal model evaluation.",
     huataiRole: "Management Trainee and Industry Research Intern",
@@ -140,7 +143,7 @@ const copy = {
     nowStudyBody: "就读于数学与统计学院，在研究与技术实践之间开展跨学科学习。",
     nowWorkStatus: "产业实践",
     nowWorkTitle: "首席运营官",
-    nowWorkBody: "任职于深圳市跃相智冷科技有限公司，工作涉及运营、商业分析，以及将技术转化为可落地产品。",
+    nowWorkBody: "在深圳负责业务运营、财务管理、供应链管理和客户开发。",
     footerTitle: "欢迎交流。",
     footerBody: "欢迎就学术问题、研究合作与值得深入的想法来信。",
     researchEyebrow: "研究档案",
@@ -172,13 +175,16 @@ const copy = {
     honours: "荣誉",
     honoursDesc: "部分学术荣誉。",
     capabilities: "方法与工具",
-    capabilitiesDesc: "研究和产品工作中使用的方法与工具。",
     xjtuDegree: "应用统计硕士",
-    xjtuBody: "学习统计学习、信息论、文本与图像分析、深度学习及生成式人工智能，关注金融科技、社会计算、人机交互和数字市场。",
+    xjtuMethods: "统计学习与信息论",
+    xjtuComputing: "文本与图像分析、深度学习与生成式人工智能",
+    xjtuTopics: "金融科技、社会计算、人机交互与数字市场",
     bjtuDegree: "信息管理与信息系统学士",
-    bjtuBody: "平均成绩 91.4/100，专业排名 1/109。课程涵盖数据库、商业分析、供应链管理、金融、会计、数据结构和应用统计。",
+    bjtuRank: "专业排名：1/109",
+    bjtuAverage: "平均成绩：91.4/100",
+    bjtuCoursework: "课程：数据库、商业分析、供应链管理、金融、会计、数据结构与应用统计",
     cooRole: "首席运营官",
-    cooBody: "在深圳液冷科技公司负责运营、商业分析、行业研究与跨职能推进。",
+    cooBody: "负责业务运营、财务管理、供应链管理和客户开发，同时承担商业分析、行业研究和跨部门协作。",
     pmRole: "AI 产品经理",
     pmBody: "设计 AIGC 智能实验辅助流程，将教学需求转化为产品需求，并参与 RAG 与多模态模型的效果评估。",
     huataiRole: "管培实习生与行业研究实习生",
@@ -246,7 +252,7 @@ const copy = {
     nowStudyBody: "数学・統計学院に在籍し、研究と技術実践を横断する学際的な学びに取り組んでいます。",
     nowWorkStatus: "実務",
     nowWorkTitle: "最高執行責任者",
-    nowWorkBody: "深圳のPhasurge Techで、事業運営、商業分析、技術の製品化に携わっています。",
+    nowWorkBody: "深圳で事業運営、財務管理、サプライチェーン管理、顧客開拓を担当しています。",
     footerTitle: "ぜひご連絡ください。",
     footerBody: "研究交流、共同研究、深く考える価値のあるアイデアを歓迎します。",
     researchEyebrow: "研究アーカイブ",
@@ -277,14 +283,17 @@ const copy = {
     workExperienceDesc: "分析、プロダクト開発、組織運営をつなぐ実務経験。",
     honours: "受賞",
     honoursDesc: "主な学術表彰。",
-    capabilities: "スキル",
-    capabilitiesDesc: "研究とプロダクト開発で用いる手法とツール。",
+    capabilities: "手法とツール",
     xjtuDegree: "応用統計学 修士課程",
-    xjtuBody: "統計学習、情報理論、テキスト・画像分析、深層学習、生成AIを学び、FinTech、社会コンピューティング、HCI、デジタル市場を研究しています。",
+    xjtuMethods: "統計学習と情報理論",
+    xjtuComputing: "テキスト・画像分析、深層学習、生成AI",
+    xjtuTopics: "FinTech、ソーシャルコンピューティング、HCI、デジタル市場",
     bjtuDegree: "経営情報システム 学士",
-    bjtuBody: "平均91.4/100、専攻順位1/109。データベース、ビジネス分析、サプライチェーン、金融、会計、データ構造、応用統計を履修しました。",
+    bjtuRank: "専攻順位：1/109",
+    bjtuAverage: "平均成績：91.4/100",
+    bjtuCoursework: "履修科目：データベース、ビジネス分析、サプライチェーン管理、金融、会計、データ構造、応用統計",
     cooRole: "最高執行責任者",
-    cooBody: "深圳の液冷技術企業で、事業運営、商業分析、業界調査、部門横断の実行を担当しています。",
+    cooBody: "事業運営、財務管理、サプライチェーン管理、顧客開拓を担当。事業分析、業界調査、部門間の連携にも取り組んでいます。",
     pmRole: "AIプロダクトマネージャー",
     pmBody: "AIGCを用いた理科実験支援フローを設計し、教育ニーズを製品要件へ変換。RAGとマルチモーダルモデルの評価にも参加しました。",
     huataiRole: "マネジメント研修・業界調査インターン",
@@ -320,9 +329,10 @@ const copy = {
 };
 
 const languageNames = { en: "English", zh: "中文", ja: "日本語" };
+const languagePreference = "jiayi-preferred-language";
 
 function applyLanguage(language) {
-  const lang = copy[language] ? language : "en";
+  const lang = Object.hasOwn(copy, language) ? language : "en";
   document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
@@ -337,16 +347,15 @@ function applyLanguage(language) {
   if (portrait) portrait.alt = copy[lang].portraitLabel;
   const menuToggle = document.querySelector("[data-menu-toggle]");
   if (menuToggle) menuToggle.setAttribute("aria-label", copy[lang].menu);
-  localStorage.setItem("jiayi-language", lang);
 }
 
 function initLanguage() {
-  const saved = localStorage.getItem("jiayi-language");
-  const browser = navigator.language.toLowerCase();
-  const initial = saved || (browser.startsWith("zh") ? "zh" : browser.startsWith("ja") ? "ja" : "en");
-  applyLanguage(initial);
+  applyLanguage(localStorage.getItem(languagePreference) || "en");
   document.querySelectorAll("[data-lang]").forEach((button) => {
-    button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+    button.addEventListener("click", () => {
+      applyLanguage(button.dataset.lang);
+      localStorage.setItem(languagePreference, button.dataset.lang);
+    });
   });
 }
 
@@ -368,10 +377,8 @@ function initMenu() {
 
 function initReveal() {
   const elements = document.querySelectorAll(".reveal");
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    elements.forEach((element) => element.classList.add("is-visible"));
-    return;
-  }
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+  document.documentElement.classList.add("has-scroll-motion");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -381,7 +388,7 @@ function initReveal() {
         }
       });
     },
-    { threshold: 0.12 },
+    { threshold: 0 },
   );
   elements.forEach((element) => observer.observe(element));
 }

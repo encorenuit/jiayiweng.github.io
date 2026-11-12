@@ -870,21 +870,17 @@ button {
   gap: clamp(0.65rem, 1.7vw, 1.5rem);
   overflow-x: auto;
   overscroll-behavior-inline: contain;
-  scroll-snap-type: x proximity;
   padding: 5px 5px 1.25rem;
-  scroll-padding-inline: 5px;
   scrollbar-color: var(--line-strong) var(--paper-warm);
   touch-action: pan-x pan-y;
 }
 
 .photo-strip.is-dragging {
-  scroll-snap-type: none;
   cursor: grabbing;
 }
 
 .gallery-item {
   flex: 0 0 auto;
-  scroll-snap-align: start;
   margin: 0;
   padding: 0.38rem;
   border: 1px solid var(--line);

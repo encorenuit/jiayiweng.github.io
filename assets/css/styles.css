@@ -1262,17 +1262,24 @@ button {
 .gallery-preview {
   position: fixed;
   inset: 0;
-  z-index: 55;
-  display: grid;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
   place-items: center;
   padding: 1rem;
   background: rgb(15 18 25 / 0.86);
-  pointer-events: none;
+}
+
+.gallery-preview[open] {
+  display: grid;
   animation: photo-preview 200ms ease both;
 }
 
-.gallery-preview[hidden] {
-  display: none;
+.gallery-preview::backdrop {
+  background: transparent;
 }
 
 .gallery-preview img {

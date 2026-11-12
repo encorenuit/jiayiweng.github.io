@@ -35,8 +35,12 @@ const copy = {
     nowWorkStatus: "Industry",
     nowWorkTitle: "Chief Operating Officer",
     nowWorkBody: "Operations, financial management, supply chain management, and customer development in Shenzhen.",
-    footerTitle: "Let’s compare notes.",
-    footerBody: "Academic conversations, research collaboration, and thoughtful ideas are welcome.",
+    footerTitle: "Contact",
+    darkMode: "Dark mode",
+    sakura: "Scatter cherry blossom petals",
+    galleryHelp: "Swipe or drag to browse. Hold a photo to enlarge it.",
+    galleryPrevious: "Previous photo",
+    galleryNext: "Next photo",
     researchEyebrow: "Research archive",
     researchTitle: "Research",
     researchIntro: "Publications, manuscripts under review, ongoing projects, and conference contributions.",
@@ -144,8 +148,12 @@ const copy = {
     nowWorkStatus: "产业实践",
     nowWorkTitle: "首席运营官",
     nowWorkBody: "在深圳负责业务运营、财务管理、供应链管理和客户开发。",
-    footerTitle: "欢迎交流。",
-    footerBody: "欢迎就学术问题、研究合作与值得深入的想法来信。",
+    footerTitle: "联系方式",
+    darkMode: "深色模式",
+    sakura: "撒一阵樱花",
+    galleryHelp: "左右滑动浏览，按住照片放大，松开恢复。",
+    galleryPrevious: "上一张照片",
+    galleryNext: "下一张照片",
     researchEyebrow: "研究档案",
     researchTitle: "研究",
     researchIntro: "正式发表、在审稿件、进行中项目与会议成果。",
@@ -217,118 +225,9 @@ const copy = {
     galleryNoteLabel: "不使用图库照片",
     galleryNoteBody: "本页不会用虚构或图库图片代替个人摄影。将原创照片放入 gallery 文件夹后，即可按标题、地点、年份和可选器材信息发布。",
   },
-  ja: {
-    navHome: "ホーム",
-    navResearch: "研究",
-    navExperience: "経歴",
-    navGallery: "写真",
-    menu: "ナビゲーションを開く",
-    homeEyebrow: "応用統計 · 人間中心AI · デジタル経済",
-    homeLead: "西安交通大学の大学院生であり、Phasurge Techの最高執行責任者です。学術研究、テクノロジー製品、組織実務に携わっています。",
-    exploreResearch: "研究を見る",
-    viewExperience: "経歴を見る",
-    portraitLabel: "翁家毅のポートレート",
-    researchMapKicker: "研究座標",
-    researchMapTitle: "三つの問いが研究を形づくる",
-    researchMapIntro: "統計学習を、人・組織・デジタルコミュニティにおける実際の意思決定へつなげます。",
-    axisOne: "人 × AI",
-    axisOneTitle: "人間とAIの相互作用",
-    axisOneBody: "大規模言語モデルが満足度、信頼、感情、意思決定に与える影響を調べます。",
-    axisTwo: "市場 × エージェント",
-    axisTwoTitle: "デジタル経済",
-    axisTwoBody: "インセンティブ、ガバナンス、エージェント行動がデータ市場、DeFi、Web3の結果をどう生むかを研究します。",
-    axisThree: "モデル × 証拠",
-    axisThreeTitle: "説明可能な機械学習",
-    axisThreeBody: "医療、経営、社会研究における信頼できる分析を、解釈可能なモデルで支えます。",
-    selectedKicker: "主な成果",
-    selectedTitle: "最近の論文",
-    selectedIntro: "最近の学術誌・学会成果からの抜粋です。",
-    allResearch: "研究一覧",
-    nowKicker: "現在",
-    nowTitle: "学びと実践を並行する",
-    nowIntro: "現在は学術研究と、アーリーステージ技術企業の運営に取り組んでいます。",
-    nowStudyStatus: "大学院",
-    nowStudyTitle: "西安交通大学 大学院",
-    nowStudyBody: "数学・統計学院に在籍し、研究と技術実践を横断する学際的な学びに取り組んでいます。",
-    nowWorkStatus: "実務",
-    nowWorkTitle: "最高執行責任者",
-    nowWorkBody: "深圳で事業運営、財務管理、サプライチェーン管理、顧客開拓を担当しています。",
-    footerTitle: "ぜひご連絡ください。",
-    footerBody: "研究交流、共同研究、深く考える価値のあるアイデアを歓迎します。",
-    researchEyebrow: "研究アーカイブ",
-    researchTitle: "研究",
-    researchIntro: "出版論文、査読中の原稿、進行中のプロジェクト、学会成果。",
-    researchIndexLabel: "構成",
-    researchIndexValue: "四つの研究段階",
-    publications: "出版論文",
-    publicationsDesc: "正式な出版記録を持つ査読付き学術論文。",
-    workingPapers: "ワーキングペーパー",
-    workingPapersDesc: "完成原稿として、特定の学会・学術誌で査読中の研究。",
-    workInProgress: "進行中の研究",
-    workInProgressDesc: "投稿前の開発段階にある研究テーマ。",
-    conference: "学会発表",
-    conferenceDesc: "会議論文、発表、正式出版された会議抄録。",
-    officialRecord: "正式記録",
-    underReview: "査読中",
-    workingTitle: "仮題",
-    conferenceRecord: "会議記録",
-    experienceEyebrow: "経歴と教育",
-    experienceTitle: "経歴",
-    experienceIntro: "学歴、実務経験、受賞、そして使用する手法とツール。",
-    experienceIndexLabel: "原則",
-    experienceIndexValue: "主張より先に証拠を",
-    education: "学歴",
-    educationDesc: "統計、情報システム、経営、計算手法の体系的な訓練。",
-    workExperience: "職務経歴",
-    workExperienceDesc: "分析、プロダクト開発、組織運営をつなぐ実務経験。",
-    honours: "受賞",
-    honoursDesc: "主な学術表彰。",
-    capabilities: "手法とツール",
-    xjtuDegree: "応用統計学 修士課程",
-    xjtuMethods: "統計学習と情報理論",
-    xjtuComputing: "テキスト・画像分析、深層学習、生成AI",
-    xjtuTopics: "FinTech、ソーシャルコンピューティング、HCI、デジタル市場",
-    bjtuDegree: "経営情報システム 学士",
-    bjtuRank: "専攻順位：1/109",
-    bjtuAverage: "平均成績：91.4/100",
-    bjtuCoursework: "履修科目：データベース、ビジネス分析、サプライチェーン管理、金融、会計、データ構造、応用統計",
-    cooRole: "最高執行責任者",
-    cooBody: "事業運営、財務管理、サプライチェーン管理、顧客開拓を担当。事業分析、業界調査、部門間の連携にも取り組んでいます。",
-    pmRole: "AIプロダクトマネージャー",
-    pmBody: "AIGCを用いた理科実験支援フローを設計し、教育ニーズを製品要件へ変換。RAGとマルチモーダルモデルの評価にも参加しました。",
-    huataiRole: "マネジメント研修・業界調査インターン",
-    huataiBody: "再生可能エネルギー産業を調査し、Wind、Choice、開示資料、財務報告、証券会社レポートを用いて企業分析を行いました。",
-    awardNational: "国家奨学金",
-    awardNationalBody: "2025年に授与された国家レベルの学術表彰。",
-    awardGraduate: "北京市優秀卒業生",
-    awardGraduateBody: "北京交通大学卒業時に受賞。",
-    awardSurvey: "全国大学生市場調査分析コンテスト",
-    awardSurveyBody: "全国二等賞 · チームリーダー。",
-    awardModel: "華数杯 数理モデリングコンテスト",
-    awardModelBody: "全国二等賞 · チームリーダー。",
-    skillData: "データとモデリング",
-    skillDataBody: "Python、SQL、機械学習、深層学習、因果推論、統計分析。",
-    skillAgents: "LLMとエージェント",
-    skillAgentsBody: "RAG、プロンプト設計、ツール呼び出し、MCP、LangChain、マルチエージェント。",
-    skillProduct: "AIプロダクト",
-    skillProductBody: "PRD、ユーザー調査、競合分析、知識ベース、マルチモーダル・AIGC製品設計。",
-    skillResearch: "研究実務",
-    skillResearchBody: "文献調査、実証設計、解釈可能モデリング、論文執筆、学際的協働。",
-    galleryEyebrow: "個人のフィールドノート",
-    galleryTitle: "写真",
-    galleryIntro: "通り過ぎた場所と、残しておきたい瞬間の写真です。",
-    galleryIndexLabel: "アーカイブ状況",
-    galleryIndexValue: "第一シリーズ準備中",
-    frameOne: "都市の痕跡",
-    frameTwo: "光の研究",
-    frameThree: "移動の記録",
-    awaitingPhoto: "このフレームにはオリジナル写真を追加できます。",
-    galleryNoteLabel: "ストック写真は使いません",
-    galleryNoteBody: "個人写真の代わりに架空画像やストック写真は掲載しません。オリジナル画像をgalleryフォルダへ追加し、題名、場所、年、任意の撮影情報と共に公開できます。",
-  },
 };
 
-const languageNames = { en: "English", zh: "中文", ja: "日本語" };
+const languageNames = { en: "English", zh: "中文" };
 const languagePreference = "jiayi-preferred-language";
 
 function applyLanguage(language) {
@@ -347,14 +246,31 @@ function applyLanguage(language) {
   if (portrait) portrait.alt = copy[lang].portraitLabel;
   const menuToggle = document.querySelector("[data-menu-toggle]");
   if (menuToggle) menuToggle.setAttribute("aria-label", copy[lang].menu);
+  for (const [selector, key] of [
+    ["[data-theme-toggle]", "darkMode"],
+    ["[data-sakura]", "sakura"],
+    ["[data-gallery-previous]", "galleryPrevious"],
+    ["[data-gallery-next]", "galleryNext"],
+  ]) {
+    const control = document.querySelector(selector);
+    if (control) {
+      control.setAttribute("aria-label", copy[lang][key]);
+      control.title = copy[lang][key];
+    }
+  }
 }
 
 function initLanguage() {
-  applyLanguage(localStorage.getItem(languagePreference) || "en");
+  try {
+    applyLanguage(localStorage.getItem(languagePreference) || "en");
+  } catch {
+    applyLanguage("en");
+  }
   document.querySelectorAll("[data-lang]").forEach((button) => {
     button.addEventListener("click", () => {
       applyLanguage(button.dataset.lang);
-      localStorage.setItem(languagePreference, button.dataset.lang);
+      try { localStorage.setItem(languagePreference, button.dataset.lang); } catch {}
+      scatterFrom(button, 8);
     });
   });
 }
@@ -393,54 +309,176 @@ function initReveal() {
   elements.forEach((element) => observer.observe(element));
 }
 
-function initLightbox() {
-  const dialog = document.querySelector("[data-lightbox-dialog]");
-  const image = document.querySelector("[data-lightbox-image]");
-  const items = [...document.querySelectorAll("[data-gallery-src]")];
-  if (!dialog || !image || !items.length) return;
+function initGallery() {
+  const strip = document.querySelector("[data-photo-strip]");
+  if (!strip) return;
 
-  let activeIndex = 0;
+  const preview = document.querySelector("[data-gallery-preview]");
+  const previewImage = preview.querySelector("img");
+  const previous = document.querySelector("[data-gallery-previous]");
+  const next = document.querySelector("[data-gallery-next]");
+  const items = [...strip.querySelectorAll(".gallery-item")];
+  let press;
+  let holdTimer;
 
-  const showImage = (index) => {
-    activeIndex = (index + items.length) % items.length;
-    const itemImage = items[activeIndex].querySelector("img");
-    image.src = items[activeIndex].dataset.gallerySrc;
-    image.alt = itemImage?.alt || "Selected gallery photograph";
+  const showPreview = (item) => {
+    previewImage.src = item.dataset.gallerySrc;
+    preview.hidden = false;
   };
 
-  const openImage = (index) => {
-    showImage(index);
-    dialog.showModal();
-    document.body.style.overflow = "hidden";
+  const hidePreview = () => {
+    clearTimeout(holdTimer);
+    preview.hidden = true;
   };
 
-  const closeImage = () => {
-    dialog.close();
-    document.body.style.overflow = "";
+  const release = () => {
+    hidePreview();
+    if (!press) return;
+    if (strip.hasPointerCapture(press.id)) strip.releasePointerCapture(press.id);
+    strip.classList.remove("is-dragging");
+    press = undefined;
   };
 
-  items.forEach((item, index) => item.addEventListener("click", () => openImage(index)));
-  dialog.querySelector("[data-lightbox-close]")?.addEventListener("click", closeImage);
-  dialog.querySelector("[data-lightbox-previous]")?.addEventListener("click", () => showImage(activeIndex - 1));
-  dialog.querySelector("[data-lightbox-next]")?.addEventListener("click", () => showImage(activeIndex + 1));
-  dialog.addEventListener("click", (event) => {
-    if (event.target === dialog) closeImage();
+  strip.addEventListener("pointerdown", (event) => {
+    const item = event.target.closest(".gallery-item");
+    if (!item || !event.isPrimary || event.button !== 0) return;
+    press = {
+      id: event.pointerId,
+      x: event.clientX,
+      y: event.clientY,
+      left: strip.scrollLeft,
+      mouse: event.pointerType === "mouse",
+    };
+    if (press.mouse) {
+      strip.setPointerCapture(event.pointerId);
+      showPreview(item);
+    } else {
+      holdTimer = setTimeout(() => showPreview(item), 150);
+    }
   });
-  dialog.addEventListener("close", () => {
-    document.body.style.overflow = "";
+
+  strip.addEventListener("pointermove", (event) => {
+    if (press?.id !== event.pointerId) return;
+    const dx = event.clientX - press.x;
+    const dy = event.clientY - press.y;
+    if (!press.moved && Math.hypot(dx, dy) < 8) return;
+    if (!press.moved) hidePreview();
+    press.moved = true;
+    if (press.mouse) {
+      strip.classList.add("is-dragging");
+      strip.scrollLeft = press.left - dx;
+    }
   });
-  document.addEventListener("keydown", (event) => {
-    if (!dialog.open) return;
-    if (event.key === "ArrowLeft") showImage(activeIndex - 1);
-    if (event.key === "ArrowRight") showImage(activeIndex + 1);
+
+  for (const type of ["pointerup", "pointercancel", "lostpointercapture"]) {
+    window.addEventListener(type, (event) => {
+      if (press?.id === event.pointerId) release();
+    });
+  }
+  window.addEventListener("blur", release);
+
+  strip.addEventListener("contextmenu", (event) => {
+    if (event.target.closest(".gallery-item")) event.preventDefault();
   });
+  strip.addEventListener("keydown", (event) => {
+    if (event.key !== " " && event.key !== "Enter") return;
+    const item = event.target.closest(".gallery-item");
+    if (!item) return;
+    event.preventDefault();
+    if (!event.repeat) showPreview(item);
+  });
+  window.addEventListener("keyup", (event) => {
+    if (event.key === " " || event.key === "Enter" || event.key === "Escape") hidePreview();
+  });
+
+  const updateArrows = () => {
+    previous.disabled = strip.scrollLeft < 2;
+    next.disabled = strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 2;
+  };
+
+  const move = (direction) => {
+    const current = strip.scrollLeft;
+    const start = items[0].offsetLeft;
+    const offsets = items.map((item) => item.offsetLeft - start);
+    const destination = direction > 0
+      ? offsets.find((offset) => offset > current + 3) ?? strip.scrollWidth
+      : offsets.findLast((offset) => offset < current - 3) ?? 0;
+    strip.scrollTo({
+      left: destination,
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+    });
+  };
+
+  strip.addEventListener("scroll", updateArrows, { passive: true });
+  window.addEventListener("resize", updateArrows);
+  previous.addEventListener("click", () => move(-1));
+  next.addEventListener("click", () => move(1));
+  updateArrows();
+}
+
+function scatterPetals(origin, count) {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.querySelector(".sakura-drift")?.remove();
+  const layer = document.createElement("div");
+  layer.className = "sakura-drift";
+  layer.setAttribute("aria-hidden", "true");
+
+  for (let index = 0; index < count; index++) {
+    const petal = document.createElement("span");
+    const left = origin
+      ? Math.max(12, Math.min(innerWidth - 12, origin.x + (Math.random() - 0.5) * innerWidth * 0.65))
+      : innerWidth * (index % 2 ? 0.04 + Math.random() * 0.23 : 0.71 + Math.random() * 0.24);
+    petal.className = "sakura-petal";
+    petal.style.setProperty("--petal-left", `${left}px`);
+    petal.style.setProperty("--petal-top", `${origin?.y ?? 70}px`);
+    petal.style.setProperty("--petal-size", `${10 + Math.random() * 13}px`);
+    petal.style.setProperty("--petal-time", `${2.6 + Math.random() * 2.1}s`);
+    petal.style.setProperty("--petal-delay", `${Math.random() * 0.55}s`);
+    petal.style.setProperty("--petal-drift", `${(left < innerWidth / 2 ? 1 : -1) * (32 + Math.random() * 105)}px`);
+    petal.style.setProperty("--petal-drop", `${30 + Math.random() * 38}vh`);
+    layer.append(petal);
+  }
+
+  document.body.append(layer);
+  setTimeout(() => layer.remove(), 5500);
+}
+
+function scatterFrom(button, count = 14) {
+  const rect = button.getBoundingClientRect();
+  scatterPetals({ x: rect.left + rect.width / 2, y: rect.bottom }, count);
+}
+
+function initTheme() {
+  const root = document.documentElement;
+  const toggle = document.querySelector("[data-theme-toggle]");
+  if (!toggle) return;
+  const scheme = matchMedia("(prefers-color-scheme: dark)");
+  const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : scheme.matches;
+  const sync = () => {
+    toggle.setAttribute("aria-pressed", String(isDark()));
+    document.querySelector('meta[name="theme-color"]').content = getComputedStyle(document.body).backgroundColor;
+  };
+
+  toggle.addEventListener("click", () => {
+    root.dataset.theme = isDark() ? "light" : "dark";
+    try { localStorage.setItem("jiayi-theme", root.dataset.theme); } catch {}
+    sync();
+    scatterFrom(toggle, 9);
+  });
+  scheme.addEventListener("change", sync);
+  sync();
+
+  const sakura = document.querySelector("[data-sakura]");
+  sakura.addEventListener("click", () => scatterFrom(sakura));
+  scatterPetals(null, 12);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   initLanguage();
   initMenu();
   initReveal();
-  initLightbox();
+  initTheme();
+  initGallery();
   const year = document.querySelector("[data-year]");
   if (year) year.textContent = new Date().getFullYear();
 });

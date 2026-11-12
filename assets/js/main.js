@@ -93,6 +93,7 @@ const copy = {
     tb10Body: "Direct cooling and heating test equipment with independent temperature, pressure, and flow control.",
     galleryPrevious: "Previous photo",
     galleryNext: "Next photo",
+    galleryPreviewLabel: "Photo preview",
     researchEyebrow: "Research archive",
     researchTitle: "Research",
     researchIntro: "Publications, manuscripts under review, ongoing projects, and conference contributions.",
@@ -263,6 +264,7 @@ const copy = {
     tb10Body: "支持温度、压力和流量独立调节的直冷、直热测试设备。",
     galleryPrevious: "上一张照片",
     galleryNext: "下一张照片",
+    galleryPreviewLabel: "照片预览",
     researchEyebrow: "研究档案",
     researchTitle: "研究",
     researchIntro: "正式发表、在审稿件、进行中项目与会议成果。",
@@ -439,55 +441,39 @@ function initGallery() {
   const next = document.querySelector("[data-gallery-next]");
   const items = [...strip.querySelectorAll(".gallery-item")];
   let press;
-  let holdTimer;
-
-  const showPreview = (item) => {
-    previewImage.src = item.dataset.gallerySrc;
-    preview.hidden = false;
-  };
-
-  const hidePreview = () => {
-    clearTimeout(holdTimer);
-    preview.hidden = true;
-  };
+  let dragged = false;
 
   const release = () => {
-    hidePreview();
     if (!press) return;
-    if (strip.hasPointerCapture(press.id)) strip.releasePointerCapture(press.id);
-    strip.classList.remove("is-dragging");
+    const { id } = press;
     press = undefined;
+    strip.classList.remove("is-dragging");
+    if (strip.hasPointerCapture(id)) strip.releasePointerCapture(id);
   };
 
   strip.addEventListener("pointerdown", (event) => {
-    const item = event.target.closest(".gallery-item");
-    if (!item || !event.isPrimary || event.button !== 0) return;
+    if (!event.target.closest(".gallery-item") || !event.isPrimary || event.button !== 0) return;
+    dragged = false;
+    if (event.pointerType !== "mouse") return;
     press = {
       id: event.pointerId,
       x: event.clientX,
       y: event.clientY,
       left: strip.scrollLeft,
-      mouse: event.pointerType === "mouse",
     };
-    if (press.mouse) {
-      strip.setPointerCapture(event.pointerId);
-      showPreview(item);
-    } else {
-      holdTimer = setTimeout(() => showPreview(item), 150);
-    }
   });
 
   strip.addEventListener("pointermove", (event) => {
     if (press?.id !== event.pointerId) return;
     const dx = event.clientX - press.x;
     const dy = event.clientY - press.y;
-    if (!press.moved && Math.hypot(dx, dy) < 8) return;
-    if (!press.moved) hidePreview();
-    press.moved = true;
-    if (press.mouse) {
+    if (!dragged) {
+      if (Math.hypot(dx, dy) < 8) return;
+      dragged = true;
+      strip.setPointerCapture(event.pointerId);
       strip.classList.add("is-dragging");
-      strip.scrollLeft = press.left - dx;
     }
+    strip.scrollLeft = press.left - dx;
   });
 
   for (const type of ["pointerup", "pointercancel", "lostpointercapture"]) {
@@ -500,15 +486,15 @@ function initGallery() {
   strip.addEventListener("contextmenu", (event) => {
     if (event.target.closest(".gallery-item")) event.preventDefault();
   });
-  strip.addEventListener("keydown", (event) => {
-    if (event.key !== " " && event.key !== "Enter") return;
+  strip.addEventListener("click", (event) => {
     const item = event.target.closest(".gallery-item");
-    if (!item) return;
-    event.preventDefault();
-    if (!event.repeat) showPreview(item);
+    if (!item || (dragged && event.detail !== 0)) return;
+    previewImage.src = item.dataset.gallerySrc;
+    previewImage.alt = item.querySelector("img").alt;
+    preview.showModal();
   });
-  window.addEventListener("keyup", (event) => {
-    if (event.key === " " || event.key === "Enter" || event.key === "Escape") hidePreview();
+  preview.addEventListener("click", (event) => {
+    if (event.target === preview) preview.close();
   });
 
   const updateArrows = () => {

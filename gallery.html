@@ -18,8 +18,8 @@
         if (seasons.includes(season)) document.documentElement.dataset.season = season;
       } catch {}
     </script>
-    <link rel="stylesheet" href="assets/css/styles.css?v=6">
-    <script src="assets/js/main.js?v=10" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css?v=7">
+    <script src="assets/js/main.js?v=11" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main" data-i18n="skipToContent">Skip to content</a>
@@ -125,9 +125,10 @@
       </section>
     </main>
 
-    <div class="gallery-preview" data-gallery-preview aria-hidden="true" hidden>
+    <dialog class="gallery-preview" data-gallery-preview aria-labelledby="gallery-preview-label">
+      <span id="gallery-preview-label" data-i18n="galleryPreviewLabel" hidden>Photo preview</span>
       <img alt="">
-    </div>
+    </dialog>
 
     <footer class="site-footer">
       <div class="shell footer-grid">

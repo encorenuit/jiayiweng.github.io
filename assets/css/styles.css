@@ -77,15 +77,6 @@ html[data-season="winter"] {
   --particle-shape: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22black%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M12%201v22m-9.5-16.5%2019%2011m-19%200%2019-11M9%203.2l3%203%203-3M9%2020.8l3-3%203%203M3%209.7l4.1-1.1L6%204.5m15%209.8-4.1%201.1%201.1%204.1M3%2014.3l4.1%201.1L6%2019.5m15-9.8-4.1-1.1L18%204.5%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
 }
 
-:lang(zh) {
-  --display: var(--song);
-  font-family: var(--song);
-}
-
-:lang(en) {
-  font-family: var(--serif);
-}
-
 * {
   box-sizing: border-box;
 }
@@ -98,6 +89,7 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--paper);
+  font-family: var(--serif);
   font-size: 19px;
   line-height: 1.72;
   -webkit-font-smoothing: antialiased;
@@ -264,15 +256,6 @@ button {
   background: var(--paper-warm);
 }
 
-.season-options .season-replay {
-  margin-top: 0.25rem;
-  border-top: 1px solid var(--line);
-}
-
-.season-options button[hidden] {
-  display: none;
-}
-
 [data-theme-toggle] .icon-sun,
 [data-theme-toggle][aria-pressed="true"] .icon-moon {
   display: none;
@@ -414,7 +397,6 @@ button {
 }
 
 .hero h1 {
-  max-width: 11ch;
   margin: 0;
   color: var(--ink);
   font-size: clamp(4rem, 8.5vw, 7.3rem);
@@ -423,15 +405,32 @@ button {
   line-height: 0.96;
 }
 
-.hero h1 .cn-name {
+.hero h1 > [lang="en"] {
   display: block;
+  max-width: 11ch;
+}
+
+.hero-name-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.75rem;
   margin-top: 1.1rem;
   color: var(--accent);
-  font-family: var(--song);
-  font-size: 0.24em;
+  font-size: clamp(1rem, 2.05vw, 1.75rem);
   font-weight: 580;
-  letter-spacing: 0.34em;
   line-height: 1.2;
+}
+
+.hero-name-details [lang="zh-CN"] {
+  letter-spacing: 0.34em;
+}
+
+.hero-location {
+  color: var(--ink-soft);
+  font-size: 0.7em;
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 .hero-alias {
@@ -439,6 +438,11 @@ button {
   color: var(--ink-soft);
   font-size: clamp(1.1rem, 2vw, 1.48rem);
   letter-spacing: 0.04em;
+}
+
+.hero-alias summary {
+  width: fit-content;
+  cursor: pointer;
 }
 
 .hero-lead {
@@ -580,14 +584,14 @@ button {
 
 .season-particle {
   position: absolute;
-  top: var(--petal-top);
+  top: 0;
   left: var(--petal-left);
   width: var(--petal-size);
   aspect-ratio: 1;
   mask: var(--particle-shape) center / contain no-repeat;
   background: linear-gradient(145deg, var(--particle-light), var(--particle-base, var(--sakura)) 78%);
   opacity: 0;
-  animation: sakura-fall var(--petal-time) ease-out var(--petal-delay) both;
+  animation: sakura-fall var(--petal-time) linear var(--petal-delay) infinite;
 }
 
 [data-season="spring"] .season-particle:nth-child(5n) {
@@ -615,9 +619,9 @@ button {
 
 @keyframes sakura-fall {
   0% { opacity: 0; transform: translate(0, -1rem) rotate(-30deg); }
-  12% { opacity: 0.9; }
-  45% { transform: translate(calc(var(--petal-drift) * 0.42), 15vh) rotate(105deg) scaleX(0.65); }
-  73% { opacity: 0.66; }
+  12% { opacity: 0.65; }
+  45% { transform: translate(calc(var(--petal-drift) * 0.42), calc(var(--petal-drop) * 0.45)) rotate(105deg) scaleX(0.65); }
+  73% { opacity: 0.45; }
   100% { opacity: 0; transform: translate(var(--petal-drift), var(--petal-drop)) rotate(325deg); }
 }
 
@@ -712,6 +716,10 @@ button {
   margin: 0.55rem 0 0;
   color: var(--ink-soft);
   font-size: 0.89rem;
+}
+
+.paper-authors strong {
+  color: var(--ink);
 }
 
 .paper-venue {

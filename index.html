@@ -18,8 +18,8 @@
         if (seasons.includes(season)) document.documentElement.dataset.season = season;
       } catch {}
     </script>
-    <link rel="stylesheet" href="assets/css/styles.css?v=6">
-    <script src="assets/js/main.js?v=10" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css?v=8">
+    <script src="assets/js/main.js?v=12" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main" data-i18n="skipToContent">Skip to content</a>
@@ -47,7 +47,6 @@
               <button type="button" data-season-choice="summer" data-i18n="seasonSummer" aria-pressed="false">Summer · Green leaves</button>
               <button type="button" data-season-choice="autumn" data-i18n="seasonAutumn" aria-pressed="false">Autumn · Maple</button>
               <button type="button" data-season-choice="winter" data-i18n="seasonWinter" aria-pressed="false">Winter · Snow</button>
-              <button type="button" class="season-replay" data-season-replay data-i18n="seasonReplay">Replay animation</button>
             </div>
           </details>
           <button class="site-control" type="button" data-theme-toggle aria-label="Dark mode" aria-pressed="true" title="Dark mode">
@@ -61,8 +60,11 @@
     <main class="page" id="main">
       <section class="shell hero">
         <div class="hero-copy reveal">
-          <h1><span lang="en">Jiayi Weng</span><span class="cn-name" lang="zh-CN">翁家毅</span></h1>
-          <p class="hero-alias"><span lang="en">Yung Kayii</span> <span aria-hidden="true">·</span> <span data-i18n="homeLocation">Shenzhen, Guangdong</span></p>
+          <h1><span lang="en">Jiayi Weng</span><span class="hero-name-details"><span lang="zh-CN">翁家毅</span> <span class="hero-location" data-i18n="homeLocation">Shenzhen, Guangdong</span></span></h1>
+          <details class="hero-alias">
+            <summary data-i18n="homeAlias">(Alias)</summary>
+            <span lang="en">Yung Kayii</span>
+          </details>
           <p class="hero-lead" data-i18n="homeLead">Graduate student at Xi’an Jiaotong University and Chief Operating Officer at Phasurge Tech. I work across academic research, technology products, and organizational practice.</p>
           <div class="hero-actions">
             <a class="button primary" href="research.html">
@@ -120,7 +122,7 @@
               <div class="paper-year">2026 · BMJ OPEN</div>
               <div>
                 <h3>Assessing community resilience during the first COVID-19 wave peak in a megacity in eastern China</h3>
-                <p class="paper-authors">Lanyue Zhang, Shouchuang Zhang, Yuehui Wei, Danijela Gasevic, Stella Talic, Jiayi Weng, et al.</p>
+                <p class="paper-authors" lang="en">Lanyue Zhang, Shouchuang Zhang, Yuehui Wei, Danijela Gasevic, Stella Talic, <strong>Jiayi Weng</strong>, Jun Zhang, Larry Z Liu, Weiyan Jian</p>
                 <p class="paper-venue">BMJ Open 16(5), e104115 <a class="jcr-badge" data-quartile="2" href="https://bmjopen.bmj.com/pages/about" title="2025 JIF · Medicine, General &amp; Internal" target="_blank" rel="noreferrer">JCR Q2</a></p>
               </div>
               <a class="paper-link" href="https://scholar.google.com/citations?user=XBC92dYAAAAJ&amp;hl=en" target="_blank" rel="noreferrer" data-i18n="scholarLink">Scholar ↗</a>
@@ -129,7 +131,7 @@
               <div class="paper-year">2025 · JMIR</div>
               <div>
                 <h3>Explainable Machine Learning Model for Predicting Persistent Sepsis-Associated Acute Kidney Injury</h3>
-                <p class="paper-authors">Wei Jiang, Yaosheng Zhang, Jiayi Weng, et al.</p>
+                <p class="paper-authors" lang="en">Wei Jiang, Yaosheng Zhang, <strong>Jiayi Weng</strong>, Lin Song, Siqi Liu, Xianghui Li, Shiqi Xu, Keran Shi, Luanluan Li, Chuanqing Zhang, Jing Wang, Quan Yuan, Yongwei Zhang, Jun Shao, Jiangquan Yu, Ruiqiang Zheng</p>
                 <p class="paper-venue">Journal of Medical Internet Research 27, e62932 <a class="jcr-badge" data-quartile="1" href="https://www.jmir.org/announcements/696" title="2025 JIF · Health Care Sciences &amp; Services" target="_blank" rel="noreferrer">JCR Q1</a></p>
               </div>
               <a class="paper-link" href="https://doi.org/10.2196/62932" target="_blank" rel="noreferrer">DOI ↗</a>
@@ -138,10 +140,10 @@
               <div class="paper-year">2025 · PACIS</div>
               <div>
                 <h3>The Coldness of Your Explanation: How Emotional Intensity in Large Language Models Shapes User Satisfaction</h3>
-                <p class="paper-authors">S. Lu and Jiayi Weng</p>
+                <p class="paper-authors" lang="en">Shouwang Lu, <strong>Jiayi Weng</strong></p>
                 <p class="paper-venue">Pacific Asia Conference on Information Systems 2025 <a class="jcr-badge venue-badge" data-tier="top" href="https://aisnet.org/conferences/pacis/" target="_blank" rel="noreferrer" data-i18n="pacisBadge">Premier IS Conference · Asia-Pacific</a></p>
               </div>
-              <a class="paper-link" href="research.html#conference" data-i18n="allResearch">All research</a>
+              <a class="paper-link" href="https://aisel.aisnet.org/pacis2025/hci/hci/19/" target="_blank" rel="noreferrer" data-i18n="officialRecord">Official record</a>
             </article>
           </div>
           <div class="hero-actions">

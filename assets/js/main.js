@@ -37,6 +37,7 @@ const copy = {
     menu: "Open navigation",
     homeEyebrow: "Applied statistics · human-centered AI · digital economy",
     homeLocation: "Shenzhen, Guangdong",
+    homeAlias: "(Alias)",
     homeLead: "Graduate student at Xi’an Jiaotong University and Chief Operating Officer at Phasurge Tech. I work across academic research, technology products, and organizational practice.",
     exploreResearch: "Explore research",
     viewExperience: "View experience",
@@ -75,7 +76,6 @@ const copy = {
     seasonSummer: "Summer · Green leaves",
     seasonAutumn: "Autumn · Maple",
     seasonWinter: "Winter · Snow",
-    seasonReplay: "Replay animation",
     phasurgeName: "Phasurge Tech Co., Ltd.",
     huataiName: "Huatai Securities",
     companyTitle: "About Phasurge",
@@ -208,6 +208,7 @@ const copy = {
     menu: "打开导航",
     homeEyebrow: "应用统计 · 人机交互 · 数字经济",
     homeLocation: "广东 深圳",
+    homeAlias: "（别称）",
     homeLead: "就读于西安交通大学，同时在跃相智冷担任首席运营官。我的学习与工作横跨学术研究、技术产品与组织实践。",
     exploreResearch: "浏览研究",
     viewExperience: "查看经历",
@@ -246,7 +247,6 @@ const copy = {
     seasonSummer: "夏 · 绿",
     seasonAutumn: "秋 · 枫",
     seasonWinter: "冬 · 雪",
-    seasonReplay: "重播动效",
     phasurgeName: "深圳市跃相智冷科技有限公司",
     huataiName: "华泰证券",
     companyTitle: "关于跃相智冷",
@@ -522,36 +522,31 @@ function initGallery() {
   updateArrows();
 }
 
-function scatterSeason(origin, count) {
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  document.querySelector(".season-drift")?.remove();
+function initSeasonDrift() {
+  const motion = matchMedia("(prefers-reduced-motion: reduce)");
   const layer = document.createElement("div");
   layer.className = "season-drift";
   layer.setAttribute("aria-hidden", "true");
 
-  for (let index = 0; index < count; index++) {
+  for (let index = 0; index < 10; index++) {
     const petal = document.createElement("span");
-    const left = origin
-      ? Math.max(12, Math.min(innerWidth - 12, origin.x + (Math.random() - 0.5) * innerWidth * 0.65))
-      : innerWidth * (index % 2 ? 0.04 + Math.random() * 0.23 : 0.71 + Math.random() * 0.24);
+    const left = index % 2 ? 4 + Math.random() * 23 : 71 + Math.random() * 24;
     petal.className = "season-particle";
-    petal.style.setProperty("--petal-left", `${left}px`);
-    petal.style.setProperty("--petal-top", `${origin?.y ?? 70}px`);
+    petal.style.setProperty("--petal-left", `${left}%`);
     petal.style.setProperty("--petal-size", `${10 + Math.random() * 13}px`);
-    petal.style.setProperty("--petal-time", `${2.6 + Math.random() * 2.1}s`);
-    petal.style.setProperty("--petal-delay", `${Math.random() * 0.55}s`);
-    petal.style.setProperty("--petal-drift", `${(left < innerWidth / 2 ? 1 : -1) * (32 + Math.random() * 105)}px`);
-    petal.style.setProperty("--petal-drop", `${30 + Math.random() * 38}vh`);
+    petal.style.setProperty("--petal-time", `${10 + Math.random() * 7}s`);
+    petal.style.setProperty("--petal-delay", `${-(index * 1.37)}s`);
+    petal.style.setProperty("--petal-drift", `${(left < 50 ? 1 : -1) * (32 + Math.random() * 105)}px`);
+    petal.style.setProperty("--petal-drop", `${70 + Math.random() * 30}vh`);
     layer.append(petal);
   }
 
-  document.body.append(layer);
-  setTimeout(() => layer.remove(), 5500);
-}
-
-function scatterFrom(button, count = 14) {
-  const rect = button.getBoundingClientRect();
-  scatterSeason({ x: rect.left + rect.width / 2, y: rect.bottom }, count);
+  const sync = () => {
+    if (motion.matches) layer.remove();
+    else document.body.append(layer);
+  };
+  motion.addEventListener("change", sync);
+  sync();
 }
 
 function initTheme() {
@@ -568,7 +563,6 @@ function initTheme() {
     root.dataset.theme = isDark() ? "light" : "dark";
     try { localStorage.setItem("jiayi-theme", root.dataset.theme); } catch {}
     sync();
-    scatterFrom(toggle, 9);
   });
   sync();
 }
@@ -590,7 +584,6 @@ function initSeason() {
   if (!picker) return;
   const trigger = picker.querySelector("summary");
   const choices = [...picker.querySelectorAll("[data-season-choice]")];
-  const replay = picker.querySelector("[data-season-replay]");
   let selection = "auto";
   try {
     const saved = localStorage.getItem("jiayi-season");
@@ -615,14 +608,8 @@ function initSeason() {
       try { localStorage.setItem("jiayi-season", selection); } catch {}
       apply();
       close();
-      scatterFrom(trigger);
     });
   }
-  replay.addEventListener("click", () => {
-    close();
-    scatterFrom(trigger);
-  });
-  replay.hidden = matchMedia("(prefers-reduced-motion: reduce)").matches;
   document.addEventListener("pointerdown", (event) => {
     if (!picker.contains(event.target)) picker.open = false;
   });
@@ -630,7 +617,7 @@ function initSeason() {
     if (event.key === "Escape" && picker.open) close();
   });
   apply();
-  scatterSeason(null, 12);
+  initSeasonDrift();
 }
 
 document.addEventListener("DOMContentLoaded", () => {

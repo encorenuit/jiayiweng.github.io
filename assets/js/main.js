@@ -13,7 +13,7 @@ const copy = {
     shenzhenLocation: "SHENZHEN · CN",
     present: "PRESENT",
     nightsheepName: "Beijing Nightsheep Technology Co., Ltd.",
-    phasurgeShortName: "Phasurge Tech",
+    phasurgeShortName: "Phasurge",
     academicAwardType: "ACADEMIC",
     graduationAwardType: "GRADUATION",
     journalArticle: "Journal article",
@@ -38,7 +38,7 @@ const copy = {
     homeEyebrow: "Applied statistics · human-centered AI · digital economy",
     homeLocation: "Shenzhen, Guangdong",
     homeAlias: "(Alias)",
-    homeLead: "Graduate student at Xi’an Jiaotong University and Chief Operating Officer at Phasurge Tech. I work across academic research, technology products, and organizational practice.",
+    homeLead: "Graduate student at Xi’an Jiaotong University and Chief Operating Officer at Phasurge. I work across academic research, technology products, and organizational practice.",
     exploreResearch: "Explore research",
     viewExperience: "View experience",
     downloadCv: "Download CV (Chinese PDF)",
@@ -76,7 +76,7 @@ const copy = {
     seasonSummer: "Summer · Green leaves",
     seasonAutumn: "Autumn · Maple",
     seasonWinter: "Winter · Snow",
-    phasurgeName: "Phasurge Tech Co., Ltd.",
+    phasurgeName: "Phasurge",
     huataiName: "Huatai Securities",
     companyTitle: "About Phasurge",
     companyIntro: "Phasurge develops two-phase direct cooling systems and control software for AI data centers, energy storage, and electric vehicle testing.",
@@ -93,7 +93,7 @@ const copy = {
     tb10Body: "Direct cooling and heating test equipment with independent temperature, pressure, and flow control.",
     galleryPrevious: "Previous photo",
     galleryNext: "Next photo",
-    galleryPreviewLabel: "Photo preview",
+    companyLinkedIn: "Phasurge on LinkedIn",
     researchEyebrow: "Research archive",
     researchTitle: "Research",
     researchIntro: "Publications, manuscripts under review, ongoing projects, and conference contributions.",
@@ -264,7 +264,7 @@ const copy = {
     tb10Body: "支持温度、压力和流量独立调节的直冷、直热测试设备。",
     galleryPrevious: "上一张照片",
     galleryNext: "下一张照片",
-    galleryPreviewLabel: "照片预览",
+    companyLinkedIn: "跃相智冷的 LinkedIn 主页",
     researchEyebrow: "研究档案",
     researchTitle: "研究",
     researchIntro: "正式发表、在审稿件、进行中项目与会议成果。",
@@ -372,6 +372,7 @@ function applyLanguage(language) {
     ["[data-theme-toggle]", "darkMode"],
     ["[data-gallery-previous]", "galleryPrevious"],
     ["[data-gallery-next]", "galleryNext"],
+    [".employer-social", "companyLinkedIn"],
   ]) {
     const control = document.querySelector(selector);
     if (control) {
@@ -440,41 +441,98 @@ function initGallery() {
   const previous = document.querySelector("[data-gallery-previous]");
   const next = document.querySelector("[data-gallery-next]");
   const items = [...strip.querySelectorAll(".gallery-item")];
+  const motion = matchMedia("(prefers-reduced-motion: reduce)");
+  let active;
+  let frame;
   let press;
-  let dragged = false;
+  let holdTimer;
+
+  const centeredIndex = () => {
+    const center = strip.scrollLeft + strip.clientWidth / 2;
+    const index = items.findIndex((item) => center < item.offsetLeft + item.offsetWidth);
+    return index < 0 ? items.length - 1 : index;
+  };
+
+  const updateFocus = () => {
+    const index = centeredIndex();
+    if (active === index) return;
+    items[active]?.removeAttribute("aria-current");
+    items[index].setAttribute("aria-current", "true");
+    active = index;
+    previous.disabled = index === 0;
+    next.disabled = index === items.length - 1;
+  };
+
+  const queueFocusUpdate = () => {
+    if (frame !== undefined) return;
+    frame = requestAnimationFrame(() => {
+      frame = undefined;
+      updateFocus();
+    });
+  };
+
+  const moveTo = (index) => {
+    const item = items[index];
+    if (!item) return;
+    strip.scrollTo({
+      left: item.offsetLeft + (item.offsetWidth - strip.clientWidth) / 2,
+      behavior: motion.matches ? "instant" : "smooth",
+    });
+  };
+
+  const showPreview = (item) => {
+    previewImage.src = item.dataset.gallerySrc;
+    previewImage.alt = item.querySelector("img").alt;
+    preview.hidden = false;
+  };
 
   const release = () => {
+    clearTimeout(holdTimer);
+    preview.hidden = true;
     if (!press) return;
-    const { id } = press;
+    const { id, dragging } = press;
     press = undefined;
-    strip.classList.remove("is-dragging");
+    if (dragging) {
+      const index = centeredIndex();
+      strip.classList.remove("is-dragging");
+      moveTo(index);
+    }
     if (strip.hasPointerCapture(id)) strip.releasePointerCapture(id);
   };
 
   strip.addEventListener("pointerdown", (event) => {
-    if (!event.target.closest(".gallery-item") || !event.isPrimary || event.button !== 0) return;
-    dragged = false;
-    if (event.pointerType !== "mouse") return;
+    const item = event.target.closest(".gallery-item");
+    if (!item || !event.isPrimary || event.button !== 0) return;
+    release();
     press = {
       id: event.pointerId,
       x: event.clientX,
       y: event.clientY,
       left: strip.scrollLeft,
+      mouse: event.pointerType === "mouse",
+      dragging: false,
     };
+    holdTimer = setTimeout(() => showPreview(item), 360);
   });
 
-  strip.addEventListener("pointermove", (event) => {
+  window.addEventListener("pointermove", (event) => {
     if (press?.id !== event.pointerId) return;
     const dx = event.clientX - press.x;
     const dy = event.clientY - press.y;
-    if (!dragged) {
+    if (!press.dragging) {
       if (Math.hypot(dx, dy) < 8) return;
-      dragged = true;
+      clearTimeout(holdTimer);
+      if (!press.mouse) {
+        release();
+        return;
+      }
+      preview.hidden = true;
+      press.dragging = true;
       strip.setPointerCapture(event.pointerId);
       strip.classList.add("is-dragging");
     }
     strip.scrollLeft = press.left - dx;
-  });
+  }, { passive: true });
 
   for (const type of ["pointerup", "pointercancel", "lostpointercapture"]) {
     window.addEventListener(type, (event) => {
@@ -482,44 +540,24 @@ function initGallery() {
     });
   }
   window.addEventListener("blur", release);
-
   strip.addEventListener("contextmenu", (event) => {
     if (event.target.closest(".gallery-item")) event.preventDefault();
   });
-  strip.addEventListener("click", (event) => {
+  strip.addEventListener("keydown", (event) => {
     const item = event.target.closest(".gallery-item");
-    if (!item || (dragged && event.detail !== 0)) return;
-    previewImage.src = item.dataset.gallerySrc;
-    previewImage.alt = item.querySelector("img").alt;
-    preview.showModal();
+    if (!item || (event.key !== "Enter" && event.key !== " ")) return;
+    event.preventDefault();
+    if (!event.repeat) showPreview(item);
   });
-  preview.addEventListener("click", (event) => {
-    if (event.target === preview) preview.close();
+  window.addEventListener("keyup", (event) => {
+    if (event.key === "Enter" || event.key === " " || event.key === "Escape") release();
   });
 
-  const updateArrows = () => {
-    previous.disabled = strip.scrollLeft < 2;
-    next.disabled = strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 2;
-  };
-
-  const move = (direction) => {
-    const current = strip.scrollLeft;
-    const start = items[0].offsetLeft;
-    const offsets = items.map((item) => item.offsetLeft - start);
-    const destination = direction > 0
-      ? offsets.find((offset) => offset > current + 3) ?? strip.scrollWidth
-      : offsets.findLast((offset) => offset < current - 3) ?? 0;
-    strip.scrollTo({
-      left: destination,
-      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
-    });
-  };
-
-  strip.addEventListener("scroll", updateArrows, { passive: true });
-  window.addEventListener("resize", updateArrows);
-  previous.addEventListener("click", () => move(-1));
-  next.addEventListener("click", () => move(1));
-  updateArrows();
+  strip.addEventListener("scroll", queueFocusUpdate, { passive: true });
+  window.addEventListener("resize", queueFocusUpdate);
+  previous.addEventListener("click", () => moveTo(centeredIndex() - 1));
+  next.addEventListener("click", () => moveTo(centeredIndex() + 1));
+  updateFocus();
 }
 
 function initSeasonDrift() {

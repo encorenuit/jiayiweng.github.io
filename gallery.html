@@ -18,8 +18,8 @@
         if (seasons.includes(season)) document.documentElement.dataset.season = season;
       } catch {}
     </script>
-    <link rel="stylesheet" href="assets/css/styles.css?v=8">
-    <script src="assets/js/main.js?v=12" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css?v=9">
+    <script src="assets/js/main.js?v=13" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main" data-i18n="skipToContent">Skip to content</a>
@@ -64,7 +64,7 @@
         </div>
       </section>
 
-      <section class="shell" aria-label="Photography archive">
+      <section class="shell photo-gallery" aria-label="Photography archive">
         <div class="gallery-tools">
           <div class="gallery-arrows">
             <button class="site-control" type="button" data-gallery-previous aria-label="Previous photo" title="Previous photo" aria-controls="photo-strip">←</button>
@@ -72,7 +72,7 @@
           </div>
         </div>
         <div class="photo-strip" id="photo-strip" data-photo-strip>
-          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-16.jpg">
+          <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-16.jpg" aria-current="true">
             <img src="assets/gallery/gallery-16.jpg" width="1707" height="1280" alt="Cherry blossoms against a blue sky" loading="eager" decoding="async">
           </button>
           <button class="gallery-item" type="button" data-gallery-src="assets/gallery/gallery-06.jpg">
@@ -127,10 +127,9 @@
       </section>
     </main>
 
-    <dialog class="gallery-preview" data-gallery-preview aria-labelledby="gallery-preview-label">
-      <span id="gallery-preview-label" data-i18n="galleryPreviewLabel" hidden>Photo preview</span>
+    <div class="gallery-preview" data-gallery-preview hidden>
       <img alt="">
-    </dialog>
+    </div>
 
     <footer class="site-footer">
       <div class="shell footer-grid">

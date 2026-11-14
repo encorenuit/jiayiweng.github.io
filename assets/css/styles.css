@@ -436,7 +436,7 @@ button {
 .hero-alias {
   margin: 0.65rem 0 0;
   color: var(--ink-soft);
-  font-size: clamp(1.1rem, 2vw, 1.48rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
   letter-spacing: 0.04em;
 }
 
@@ -977,8 +977,21 @@ button {
 
 .employer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem;
+}
+
+.employer-social {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 3px;
+}
+
+.employer-social:hover {
+  background: var(--paper-strong);
 }
 
 .employer-logo {
@@ -1196,32 +1209,55 @@ button {
   cursor: default;
 }
 
+.photo-gallery {
+  container-type: inline-size;
+}
+
 .photo-strip {
+  --photo-width: min(74cqw, 590px);
+  position: relative;
   display: flex;
-  gap: clamp(0.65rem, 1.7vw, 1.5rem);
+  gap: clamp(0.35rem, 1.2vw, 0.95rem);
   overflow-x: auto;
   overscroll-behavior-inline: contain;
-  padding: 5px 5px 1.25rem;
-  scrollbar-color: var(--line-strong) var(--paper-warm);
+  padding-block: 0.5rem 1rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
   touch-action: pan-x pan-y;
+}
+
+.photo-strip::-webkit-scrollbar {
+  display: none;
 }
 
 .photo-strip.is-dragging {
   cursor: grabbing;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
 }
 
 .gallery-item {
   position: relative;
-  flex: 0 0 auto;
+  flex: 0 0 var(--photo-width);
+  display: grid;
+  place-items: center;
+  height: clamp(200px, 55cqw, 450px);
   margin: 0;
-  padding: 0.38rem;
-  border: 1px solid var(--line);
-  border-radius: 3px;
-  background: var(--paper-strong);
+  padding: 0;
+  border: 0;
+  background: transparent;
   cursor: grab;
-  overflow: hidden;
+  scroll-snap-align: center;
   user-select: none;
   -webkit-touch-callout: none;
+}
+
+.gallery-item:first-child {
+  margin-inline-start: calc((100% - var(--photo-width)) / 2);
+}
+
+.gallery-item:last-child {
+  margin-inline-end: calc((100% - var(--photo-width)) / 2);
 }
 
 .is-dragging .gallery-item {
@@ -1229,65 +1265,38 @@ button {
 }
 
 .gallery-item img {
+  min-width: 0;
   width: auto;
-  height: clamp(170px, 31vw, 360px);
-  max-width: none;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 4px;
   pointer-events: none;
-  transition: transform 480ms cubic-bezier(0.2, 0.7, 0.25, 1);
+  opacity: 0.75;
+  transform: scale(0.82);
+  transition: transform 360ms cubic-bezier(0.2, 0.7, 0.25, 1), opacity 360ms ease;
 }
 
-.gallery-item::after {
-  position: absolute;
-  right: 0.75rem;
-  bottom: 0.75rem;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  background: #181c23c9 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4'/%3E%3C/svg%3E") center / 1.15rem no-repeat;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 200ms ease, transform 200ms ease;
-  pointer-events: none;
-  content: "";
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .photo-strip:not(.is-dragging) .gallery-item:hover img {
-    transform: scale(1.075);
-  }
-
-  .photo-strip:not(.is-dragging) .gallery-item:hover::after {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.gallery-item:focus-visible::after {
+.gallery-item[aria-current="true"] img {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 .gallery-preview {
   position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  max-height: none;
-  margin: 0;
-  border: 0;
+  z-index: 110;
+  display: grid;
   place-items: center;
   padding: 1rem;
+  pointer-events: none;
   background: rgb(15 18 25 / 0.86);
-}
-
-.gallery-preview[open] {
-  display: grid;
   animation: photo-preview 200ms ease both;
 }
 
-.gallery-preview::backdrop {
-  background: transparent;
+.gallery-preview[hidden] {
+  display: none;
 }
 
 .gallery-preview img {
@@ -1559,7 +1568,4 @@ button {
     display: none;
   }
 
-  .gallery-item img {
-    transform: none !important;
-  }
 }
